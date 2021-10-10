@@ -1,0 +1,13 @@
+Sprint 1  :- 10/03/2021 - 10/10/2021
+-Weekly Scrum Report
+	- What tasks did I work on / complete?
+		1. Revised MERN stack
+		2. Installed IDE 
+		3. Created class diagram
+	- What am I planning to work on next?
+		1. Create DB design
+	- What tasks are blocked waiting on another team member?
+		1. None
+ - Select one of the XP Core Values and keep a journal of how the team kept these values throughout the project.
+	The team maintained the "COMMUNICATION" value throughout the week by having 2 sprint discussion calls during the week and staying active to
+	answer questions on watsapp and over the call.
