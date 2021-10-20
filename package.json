@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/gopinathsjsu/team-project-vsrl_202_teamproject/issues"
   },
-  "homepage": "https://github.com/gopinathsjsu/team-project-vsrl_202_teamproject#readme"
+  "homepage": "https://github.com/gopinathsjsu/team-project-vsrl_202_teamproject#readme",
+  "dependencies": {
+    "mongoose": "^6.0.11"
+  }
 }
