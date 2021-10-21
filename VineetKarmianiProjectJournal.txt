@@ -11,3 +11,15 @@ Sprint 1  :- 10/03/2021 - 10/10/2021
  - Select one of the XP Core Values and keep a journal of how the team kept these values throughout the project.
 	The team maintained the "COMMUNICATION" value throughout the week by having 2 sprint discussion calls during the week and staying active to
 	answer questions on watsapp and over the call.
+	
+Sprint 2  :- 10/10/2021 - 10/17/2021
+-Weekly Scrum Report
+	- What tasks did I work on / complete?
+		1. Learnt MongoDb
+	- What am I planning to work on next?
+		1. Creating schemas and routes.
+	- What tasks are blocked waiting on another team member?
+		1. None
+ - Select one of the XP Core Values and keep a journal of how the team kept these values throughout the project.
+	The team maintained the "COMMUNICATION" value throughout the week by sitting together one day and having 1 sprint discussion call.
+	
