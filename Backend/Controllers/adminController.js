@@ -1,5 +1,6 @@
 const flight = require("../Models/FlightSchema");
-const admin = require("../Models/userSchemaSchema");
+const admin = require("../Models/userSchema");
+const flightschema = require("../Models/FlightSchema");
 exports.createFight=(req,res) =>{
 
 }
@@ -22,5 +23,14 @@ exports.getFight=(req,res) =>{
 
 }
 exports.getFlightById =(req,res) =>{
+
+}
+exports.passengerDetails =(req,res) =>{
+
+}
+exports.pilotDetails =(req,res) =>{
+
+}
+exports.airhostessDetails =(req,res) =>{
 
 }
