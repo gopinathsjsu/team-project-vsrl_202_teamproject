@@ -10,7 +10,10 @@ const router = express.Router();
 // router.param("questionPaperId", getQuestionPaperById);
 const{bookFlight, getCurrentFlights}= require("../controllers/userController");
 
+const{bookFlight, getUserById}= require("../controllers/userController");
+const{getFlightById}= require("../controllers/adminController");
 router.param("userId",getUserById);
+router.param("flightId",getFlightById);
 router.post("/user/bookFlight/:userId/:flightId",isSignedIn,isAuthenticated, bookFlight);
 router.post("/user/bookFlight/payments/:userId/:flightId",isSignedIn,isAuthenticated, bookFlight);
 router.get("/user/currentFlights/:userId/:flightId", isSignedIn,isAuthenticated, getCurrentFlights);
