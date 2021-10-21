@@ -39,5 +39,6 @@ app.use(cors());
 app.use("/api", adminRoutes);
 app.use("/api", authRoutes);
 app.use("/api", userRoutes);
+app.use("/api")
 
 module.exports = app;
