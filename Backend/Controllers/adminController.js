@@ -3,21 +3,10 @@ const admin = require("../Models/userSchema");
 const Flight=require("../Models/flightModel/flight.model");
 const flightschema = require("../Models/FlightSchema");
 exports.createFight=(req,res) =>{
-//create a new flight
-// const flight = new User({
-//     pilotId: req.body.pilotId,
-//     arrLoc: req.body.arrLoc,
-//     deptLoc: req.body.deptLoc,
-//     arrTime: req.body.arrTime,
-//     depTime: req.body.depTime,
-//     status:req.body.status,
-//     createTimeStamp:req.body.createTimeStamp,
-//     modifiedTimeStamp:req.body.modifiedTimeStamp
-// });
 
 const flight = new Flight(req.body);
 
-//let newFlight = new Flight(flight);
+
 flight.collection.insert(flight)
   .then((data)=>{
      resolve(data);
