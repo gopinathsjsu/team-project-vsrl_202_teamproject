@@ -1,4 +1,3 @@
-const flight = require("../Models/FlightSchema");
 const admin = require("../Models/userSchema");
 const Flight=require("../Models/flightModel/flight.model");
 const flightschema = require("../Models/FlightSchema");
