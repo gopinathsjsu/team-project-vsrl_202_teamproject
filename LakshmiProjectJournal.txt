@@ -1,11 +1,11 @@
 Sprint 1  :- 10/03/2021 - 10/10/2021
 -Weekly Scrum Report
-	- What tasks did I work on / complete?
+	- Tasks I work on / completed?
 		1. Revised MERN stack
-		2. Installed IDE 
-		3. Created class diagram
+		2. Installed Visual Studio Code IDE 
+		3. Worked on class diagram
 	- What am I planning to work on next?
-		1. Create DB design
+		1. Learn and Create Mongo DB design
 	- What tasks are blocked waiting on another team member?
 		1. None
  - Select one of the XP Core Values and keep a journal of how the team kept these values throughout the project.
@@ -15,7 +15,7 @@ Sprint 1  :- 10/03/2021 - 10/10/2021
 Sprint 2  :- 10/10/2021 - 10/17/2021
 -Weekly Scrum Report
 	- What tasks did I work on / complete?
-		1. Learnt MongoDb
+		1. Learnt MongoDB
 	- What am I planning to work on next?
 		1. Creating schemas and routes.
 	- What tasks are blocked waiting on another team member?
