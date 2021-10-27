@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+var mongoose= require('mongoose') ;
 import { v4 as uuidv4 } from 'uuid';
 
 
