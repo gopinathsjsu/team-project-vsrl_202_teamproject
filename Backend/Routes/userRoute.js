@@ -8,14 +8,14 @@ const router = express.Router();
 // const {SavePaperResponse} = require("../controllers/userResponse")
 
 // router.param("questionPaperId", getQuestionPaperById);
-const{bookFlight, getCurrentFlights}= require("../controllers/userController");
 
-const{bookFlight, getUserById}= require("../controllers/userController");
+const{bookFlight, getUserById,getCurrentFlights}= require("../controllers/userController");
+const{isAuthenticated} = require("../Controllers/authController")
 const{getFlightById}= require("../controllers/adminController");
 router.param("userId",getUserById);
 router.param("flightId",getFlightById);
-router.post("/user/bookFlight/:userId/:flightId",isSignedIn,isAuthenticated, bookFlight);
-router.post("/user/bookFlight/payments/:userId/:flightId",isSignedIn,isAuthenticated, bookFlight);
-router.get("/user/currentFlights/:userId/:flightId", isSignedIn,isAuthenticated, getCurrentFlights);
+router.post("/user/bookFlight/:userId/:flightId",isAuthenticated, bookFlight);
+router.post("/user/bookFlight/payments/:userId/:flightId",isAuthenticated, bookFlight);
+router.get("/user/currentFlights/:userId/:flightId",isAuthenticated, getCurrentFlights);
 
 module.exports = router;

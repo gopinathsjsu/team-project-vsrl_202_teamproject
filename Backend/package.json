@@ -7,7 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gopinathsjsu/team-project-vsrl_202_teamproject.git"
@@ -21,7 +20,11 @@
   "dependencies": {
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "express-jwt": "^6.1.0",
+    "express-validator": "^6.13.0",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.11",
     "node": "^16.11.1",
     "nodemon": "^2.0.14"

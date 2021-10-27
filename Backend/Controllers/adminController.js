@@ -1,25 +1,25 @@
 const flight = require("../Models/FlightSchema");
 const admin = require("../Models/userSchema");
 const flightschema = require("../Models/FlightSchema");
-exports.createFight=(req,res) =>{
+exports.createFlight=(req,res) =>{
 
 }
-exports.editFight=(req,res) =>{
+exports.editFlight=(req,res) =>{
 
 }
-exports.editFights=(req,res) =>{
+exports.editFlights=(req,res) =>{
 
 }
-exports.deleteFight=(req,res) =>{
+exports.deleteFlight=(req,res) =>{
 
 }
-exports.deleteFights=(req,res) =>{
+exports.deleteFlights=(req,res) =>{
 
 }
-exports.getAllFights=(req,res) =>{
+exports.getAllFlights=(req,res) =>{
 
 }
-exports.getFight=(req,res) =>{
+exports.getFlight=(req,res) =>{
 
 }
 exports.getFlightById =(req,res) =>{
