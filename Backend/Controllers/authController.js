@@ -5,7 +5,6 @@ var jwt=require("jsonwebtoken");
 var expressJwt=require("express-jwt");
 
 exports.signup=(req,res) =>{
-
     const errors=validationResult(req);
     if(!errors.isEmpty()){
         return res.status(422).json({
@@ -28,6 +27,7 @@ exports.signup=(req,res) =>{
      });
  };
 
+ 
  exports.signin=(req,res) =>{
     const errors=validationResult(req);
      const{email, password}=req.body; //destructuring data - extracting username and password from the entire object
