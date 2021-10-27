@@ -1,4 +1,4 @@
-const admin = require("../Models/userSchema");
+const UserSchema = require("../Models/userSchema");
 const Flight=require("../Models/flightModel/flight.model");
 const flightschema = require("../Models/FlightSchema");
 exports.createFlight=(req,res) =>{
@@ -64,7 +64,18 @@ exports.getFlightById =(req,res) =>{
 
 }
 exports.getAllPassengers =(req,res) =>{
+    var flightId = req.body.flightId;
 
+    return UserSchema.find({flightId: flightId})
+    .exec()
+    .then((passengers) => {
+        return res.json(passengers);
+    })
+    .catch(error=>{
+        return {
+            error: "No User Found "+error
+        };
+    })
 }
 exports.getAllPilots =(req,res) =>{
 

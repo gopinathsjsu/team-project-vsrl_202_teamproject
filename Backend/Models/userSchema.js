@@ -40,6 +40,10 @@ const userSchema = new mongoose.Schema(
     rewardPoints: {
         type: Number,
         default: 0
+    },
+    flightId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref:"FlightSchema"
     }
  }
 )
