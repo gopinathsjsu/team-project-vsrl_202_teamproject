@@ -63,13 +63,13 @@ exports.getFlight=(req,res) =>{
 exports.getFlightById =(req,res) =>{
 
 }
-exports.passengerDetails =(req,res) =>{
+exports.getAllPassengers =(req,res) =>{
 
 }
-exports.pilotDetails =(req,res) =>{
+exports.getAllPilots =(req,res) =>{
 
 }
-exports.airhostressDetails =(req,res) =>{
+exports.getAllAirhostress =(req,res) =>{
 
 }
 exports.createAirHostressDetails =(req,res) =>{
