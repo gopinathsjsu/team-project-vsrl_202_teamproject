@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+var mongoose = require("mongoose");
 const userSchema = new mongoose.Schema(
 {
         firstName: {
@@ -40,6 +40,10 @@ const userSchema = new mongoose.Schema(
     rewardPoints: {
         type: Number,
         default: 0
+    },
+    flightId : {
+      type: mongoose.Schema.Types.ObjectId,
+      ref:"FlightSchema"
     }
  }
 )

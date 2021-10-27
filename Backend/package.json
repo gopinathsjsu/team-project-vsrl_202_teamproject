@@ -4,6 +4,7 @@
   "description": "202 Team Project",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,9 +18,11 @@
   },
   "homepage": "https://github.com/gopinathsjsu/team-project-vsrl_202_teamproject#readme",
   "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
-    "mongoose": "^6.0.11",
-    "node": "^16.11.1",
+    "mongoose": "^5.11.18",
+    "node": "^15.8.0",
     "nodemon": "^2.0.14"
   }
 }
