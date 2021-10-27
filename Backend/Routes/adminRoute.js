@@ -17,6 +17,9 @@ router.get("/admin/getFlight",getFlight);
 router.get("/admin/flight/passengers/",passengerDetails);
 router.get("/admin/flight/pilot/",pilotDetails);
 router.get("/admin/flight/airhostess/",airhostessDetails);
+router.post("/admin/flight/createPassengers/",createPassengerDetails);
+router.post("/admin/flight/createPilot/",createPilotDetails);
+router.post("/admin/flight/createAirhostess/",createAirhostessDetails);
 
 
 module.exports = router;
