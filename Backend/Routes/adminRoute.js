@@ -8,9 +8,9 @@ const {createAirHostressDetails,createPassengerDetails,createPilotDetails,create
 router.param("flightId",getFlightById);
 
 router.post("/admin/createFlight",createFlight);
-router.put("/admin/editFlight/:flightId",editFlight);
+router.post("/admin/editFlight",editFlight);
 router.put("/admin/editFlights",editFlights);
-router.delete("/admin/deleteFlight/:flightId", deleteFlight);
+router.delete("/admin/deleteFlight", deleteFlight);
 router.delete("/admin/deleteFlights", deleteFlights);
 router.get("/admin/getAllFlights",getAllFlights);
 router.get("/admin/getFlight",getFlight);
