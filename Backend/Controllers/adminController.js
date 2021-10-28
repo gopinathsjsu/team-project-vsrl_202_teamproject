@@ -66,7 +66,10 @@ exports.getFlightById =(req,res) =>{
 exports.getAllPassengers =(req,res) =>{
     var flightId = req.body.flightId;
 
-    return UserSchema.find({flightId: flightId})
+    return UserSchema.find(
+        {flightId: flightId},
+        {role: 3}
+        )
     .exec()
     .then((passengers) => {
         return res.json(passengers);
