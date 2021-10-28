@@ -81,10 +81,41 @@ exports.getAllPassengers =(req,res) =>{
     })
 }
 exports.getAllPilots =(req,res) =>{
+    var flightId = req.body.flightId;
 
+    return UserSchema.find(
+        {flightId: flightId},
+        {role: 1}
+        )
+    .exec()
+    .then((passengers) => {
+        return res.json(passengers);
+    })
+    .catch(error=>{
+        return {
+            error: "No User Found "+error
+        };
+    })
 }
-exports.getAllAirhostress =(req,res) =>{
 
+exports.getAllAirhostress =(req,res) =>{
+    exports.getAllPilots =(req,res) =>{
+        var flightId = req.body.flightId;
+    
+        return UserSchema.find(
+            {flightId: flightId},
+            {role: 2}
+            )
+        .exec()
+        .then((passengers) => {
+            return res.json(passengers);
+        })
+        .catch(error=>{
+            return {
+                error: "No User Found "+error
+            };
+        })
+    }
 }
 exports.createAirHostressDetails =(req,res) =>{
 const airhostess = new userSchema(req.body)
