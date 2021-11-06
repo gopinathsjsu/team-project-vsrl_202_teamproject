@@ -1,4 +1,4 @@
-const user=require("../Models/userSchema");
+const UserSchema=require("../Models/userSchema");
 const { check ,validationResult} = require('express-validator');
 
 var jwt=require("jsonwebtoken");
@@ -12,7 +12,7 @@ exports.signup=(req,res) =>{
         });
     }
 
-     const user=new User(req.body);
+     const user=new UserSchema(req.body);
      user.save((err,user)=>{
         if(err){
             return res.status(400).json({
@@ -20,8 +20,8 @@ exports.signup=(req,res) =>{
             });
         }
         res.json({
-            name:user.name,
-            email:user.email,
+            name:user.firstName,
+            email:user.EmailId,
             id:user._id
         });
      });
