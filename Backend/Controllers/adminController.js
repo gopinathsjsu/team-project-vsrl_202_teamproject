@@ -1,51 +1,61 @@
 const UserSchema = require("../Models/userSchema");
-const Flight=require("../Models/flightModel/flight.model");
-const flightschema = require("../Models/FlightSchema");
+const FlightSchema = require("../Models/FlightSchema");
+const mongoose = require("mongoose");
 exports.createFlight=(req,res) =>{
-
-const flight = new Flight(req.body);
-
-
-flight.collection.insert(flight)
-  .then((data)=>{
-     resolve(data);
-  }).catch((err)=>{
-     reject(err);
+const flight = new FlightSchema(req.body);
+return FlightSchema.collection.insertOne(flight)
+  .then((data)=>{   
+    res.json({success:true,data:data});
+  }).catch((err)=>{   
+    console.log(err);
+    res.json({success:false,msg:"error: "+err});
 });
 }
 exports.editFlight=(req,res) =>{
-var flightid =req.body._id;
-const flight = new Flight(req.body);
-if(mongoose.Types.ObjectId.isValid(flightid)) {
-    flightschema.findByIdAndUpdate(flightid,{$set:{pilotid: flight.pilotId,arrivallocation: flight.arrivalLocation, departLocation: flight.deptLoc, arrivalTime: flight.arrTime, departTime: flight.depTime, status: flight.status, pilotid: flight.pilotId}},{new:true}).then((docs)=>{
+const flight = {
+    id:req.body._id,
+    flightNumber:req.body.flightNumber,
+    pilotId:req.body.pilotId,
+    arrivalLocation:req.body.arrivalLocation,
+    departureLocation:req.body.departureLocation,
+    status:req.body.status,
+    arrivalTime:new Date(req.body.arrivalTime),
+    departureTime:new Date(req.body.departureTime),
+    createdDateTime:new Date(req.body.createdDateTime),
+    modifiedDateTime:new Date(req.body.modifiedDateTime)
+   };
+if(mongoose.Types.ObjectId.isValid(flight.id)) {
+   return FlightSchema.findByIdAndUpdate(flight.id,{$set:{flightNumber:flight.flightNumber, pilotId: flight.pilotId,arrivalLocation: flight.arrivalLocation, departureLocation: flight.departureLocation, arrivalTime: flight.arrivalTime, departureTime: flight.departureTime,status:flight.status,createdDateTime:flight.createdDateTime,modifiedDateTime:flight.modifiedDateTime}},{new:false})
+    .then((docs)=>{
        if(docs) {
-         resolve({success:true,data:docs});
-       } else {
-         reject({success:false,data:"no such flight exist"});
+         res.json({success:true,data:docs});
+       } else {        
+         res.json({success:false,msg:"no such flight exist"});
        }
     }).catch((err)=>{
-        reject(err);
+        console.log(err);
+        res.json({success:false,msg:"error: "+err});
     })
-    } else {
-      reject({success:"false",data:"provide correct Id"});
+    } else {     
+     res.json({success:false,msg:"provide correct id"});
     }
 }
-
 exports.deleteFlight=(req,res) =>{
-    var flightid =req.body._id;
-    if(mongoose.Types.ObjectId.isValid(id)) {
-        User.findOneAndRemove({_id: flightid})
+    var flightId =req.body._id;
+    if(mongoose.Types.ObjectId.isValid(flightId)) {
+        return FlightSchema.findOneAndRemove({_id: flightId})
           .then((docs)=>{
              if(docs) {
-                resolve({"success":true,data:docs});
+                res.json({success:true,data:docs});                
              } else {
-                reject({"success":false,data:"no such flight exist"});
+                res.json({success:false,msg:"no such flight exist"});                
              }
-        }).catch((err)=>{
-            reject(err);
+        }).catch((err)=>{           
+            console.log(err);
+            res.json({success:false,msg:"error: "+err});
         })
       } else {
-          reject({"success":false,data:"please provide correct Id"});
+          res.json({"success":false,msg:"please provide correct Id"});          
       }
 }
 exports.editFlights=(req,res) =>{
@@ -55,7 +65,14 @@ exports.deleteFlights=(req,res) =>{
 
 }
 exports.getAllFlights=(req,res) =>{
-//
+return FlightSchema.find({})
+ .then((data)=>{
+   return res.json({success:true,data:data});
+  })
+ .catch((err)=>{
+   console.log(err);
+   res.json({success:false,msg:"error: "+err});
+ })
 }
 exports.getFlight=(req,res) =>{
 

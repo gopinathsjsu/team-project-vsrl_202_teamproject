@@ -32,6 +32,23 @@ const FlightSchema = new Schema({
     type: Date,
     required: true,
     maxlength: 50   
+  },
+  status:{
+    type:String,
+    required:true,
+    maxlength:30
+  },
+  createdDateTime:{
+    type: Date,
+    required: true,
+    maxlength: 50,
+    default:Date.now  
+  },
+  modifiedDataTime:{
+    type: Date,
+    required: true,
+    maxlength: 50 ,
+    default:Date.now 
   }
   
 });
