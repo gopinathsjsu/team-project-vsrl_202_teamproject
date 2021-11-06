@@ -83,10 +83,7 @@ exports.getFlightById =(req,res) =>{
 exports.getAllPassengers =(req,res) =>{
     var flightId = req.body.flightId;
 
-    return UserSchema.find(
-        {flightId: flightId},
-        {role: 3}
-        )
+    return UserSchema.find({flightId: flightId,role: 3})
     .exec()
     .then((passengers) => {
         return res.json(passengers);
@@ -100,10 +97,7 @@ exports.getAllPassengers =(req,res) =>{
 exports.getAllPilots =(req,res) =>{
     var flightId = req.body.flightId;
 
-    return UserSchema.find(
-        {flightId: flightId},
-        {role: 1}
-        )
+    return UserSchema.find({flightId: flightId,role: 1})
     .exec()
     .then((passengers) => {
         return res.json(passengers);
@@ -116,13 +110,9 @@ exports.getAllPilots =(req,res) =>{
 }
 
 exports.getAllAirhostress =(req,res) =>{
-    exports.getAllPilots =(req,res) =>{
         var flightId = req.body.flightId;
     
-        return UserSchema.find(
-            {flightId: flightId},
-            {role: 2}
-            )
+        return UserSchema.find({flightId: flightId,role: 3})
         .exec()
         .then((passengers) => {
             return res.json(passengers);
@@ -132,7 +122,6 @@ exports.getAllAirhostress =(req,res) =>{
                 error: "No User Found "+error
             };
         })
-    }
 }
 exports.createAirHostressDetails =(req,res) =>{
 const airhostess = new userSchema(req.body)
