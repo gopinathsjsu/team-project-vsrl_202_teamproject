@@ -124,51 +124,84 @@ exports.getAllAirhostress =(req,res) =>{
         })
 }
 exports.createAirHostressDetails =(req,res) =>{
-const airhostess = new userSchema(req.body)
+const airhostess = new UserSchema(req.body)
 airhostess.role=2;
-airhostess.save()
-.then((airhostess)=>{
-    return{
-        airhostess: airhostess.firstName
-    };
-})
-.catch((err)=>{
-    return{
-        error: "Not able to create passenger"
-    };  
-})
+airhostess.save((err, airhostess)=>{
+    if(err){
+        return res.status(400).json({
+            err: "NOT able to save airhostess in DB"+"Error is"+err
+        });
+    }
+    res.json({
+        name: airhostess.name,
+        email: airhostess.email,
+        id: airhostess._id
+    })    
+});
 }
 exports.createPassengerDetails =(req,res) =>{
-const passenger = new userSchema(req.body)
-passenger.role = 3;
-passenger.save()
-.then((passenger)=>{
-    return {
-        passengername: passenger.firstName
-    };
-})
-.catch((err)=>{
-    return{
-        error: "Not able to create passenger"
-    };
-}
-
-)
-}
-
-exports.createPilotDetails =(req,res) =>{
-    const pilot = new userSchema(req.body)
-    pilot.role=1;
-    pilot.save()
-    .then((pilot)=>{
-        return{
-            pilot: pilot.firstName
-        };
-    })
-    .catch((err)=>{
-        return{
-            error: "Not able to create pilot"
-        };  
-    })
+    const passenger = new UserSchema(req.body)
+    passenger.role=3;
+    passenger.save((err, passenger)=>{
+        if(err){
+            return res.status(400).json({
+                err: "NOT able to save passenger in DB"+"Error is"+err
+            });
+        }
+        res.json({
+            name: passenger.name,
+            email: passenger.email,
+            id: passenger._id
+        })    
+    });
     }
+    exports.createPilotDetails =(req,res) =>{
+        const Pilot = new UserSchema(req.body)
+        Pilot.role=1;
+        Pilot.save((err, Pilot)=>{
+            if(err){
+                return res.status(400).json({
+                    err: "NOT able to save Pilot in DB"+"Error is"+err
+                });
+            }
+            res.json({
+                name: Pilot.name,
+                email: Pilot.email,
+                id: Pilot._id
+            })    
+        });
+        }
+// exports.createPassengerDetails =(req,res) =>{
+// const passenger = new UserSchema(req.body)
+// passenger.role = 3;
+// passenger.save()
+// .then((passenger)=>{
+//     return {
+//         passengername: passenger.firstName
+//     };
+// })
+// .catch((err)=>{
+//     return{
+//         error: "Not able to create passenger"
+//     };
+// }
+
+// )
+// }
+
+// exports.createPilotDetails =(req,res) =>{
+//     const pilot = new UserSchema(req.body)
+//     pilot.role=1;
+//     pilot.save()
+//     .then((pilot)=>{
+//         return{
+//             pilot: pilot.firstName
+//         };
+//     })
+//     .catch((err)=>{
+//         return{
+//             error: "Not able to create pilot"
+//         };  
+//     })
+//     }
 

@@ -20,6 +20,4 @@ router.get("/admin/flight/airhostesses/",getAllAirhostress);
 router.post("/admin/flight/createPassengers/",createPassengerDetails);
 router.post("/admin/flight/createPilot/",createPilotDetails);
 router.post("/admin/flight/createAirhostess/",createAirHostressDetails);
-
-
 module.exports = router;
