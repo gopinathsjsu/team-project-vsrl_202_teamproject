@@ -46,7 +46,8 @@ const userSchema = new mongoose.Schema(
     flightId: {
         type: mongoose.Schema.Types.ObjectId,
         ref:"FlightSchema"
-    }
+    },
+    salt: String
  }
 )
 
