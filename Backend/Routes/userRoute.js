@@ -14,7 +14,7 @@ const{isAuthenticated} = require("../Controllers/authController")
 const{getFlightById}= require("../controllers/adminController");
 router.param("userId",getUserById);
 router.param("flightId",getFlightById);
-router.post("/user/bookFlight/:userId/:flightId",isAuthenticated, bookFlight);
+router.post("/user/bookFlight",isAuthenticated, bookFlight);
 router.post("/user/bookFlight/payments/:userId/:flightId",isAuthenticated, bookFlight);
 router.get("/user/currentFlights/:userId/:flightId",isAuthenticated, getCurrentFlights);
 
