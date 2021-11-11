@@ -22,6 +22,24 @@ exports.showFlights = (req,res) =>{
     })
 
 }
+
+exports.showFlight = (req,res) =>{
+    
+    const flightNumber = req.body.flightNumber;
+
+    return FlightSchema.find({flightNumber: flightNumber})
+    .exec()
+    .then((flights) => {
+        return res.json(flights);
+    })
+    .catch(error=>{
+        return {
+            error: "No Flight Found "+error
+        };
+    })
+
+}
+
 exports.bookFlight = (req,res) => {
     const userFlight= new UserFlightSchema(req.body);
     userFlight.save((err, userFlight)=>{
