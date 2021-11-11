@@ -1,6 +1,27 @@
 const user = require("../Models/userSchema")
 const UserFlightSchema = require("../Models/UserFlightSchema")
+const FlightSchema = require("../Models/FlightSchema")
 
+exports.showFlights = (req,res) =>{
+    
+    const fromDestination = req.body.departureLocation;
+    const toDestination = req.body.arrivalLocation;
+    const departureDate = req.body.departureDate;
+    const arrivalDate = req.body.arrivalDate;
+
+    return FlightSchema.find({departureLocation: fromDestination,arrivalLocation: toDestination,
+        departureDate: departureDate, arrivalDate: arrivalDate})
+    .exec()
+    .then((flights) => {
+        return res.json(flights);
+    })
+    .catch(error=>{
+        return {
+            error: "No Flight Found "+error
+        };
+    })
+
+}
 exports.bookFlight = (req,res) => {
     const userFlight= new UserFlightSchema(req.body);
     userFlight.save((err, userFlight)=>{
