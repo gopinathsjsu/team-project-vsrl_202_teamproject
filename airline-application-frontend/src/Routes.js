@@ -8,11 +8,11 @@ import SignUp from './components/signup.component';
 const Routes = ()=>{
     return (
         <BrowserRouter>
-
+{/* 
         <div className="App">
          <nav className="navbar navbar-expand-lg navbar-light fixed-top">
         <div className="container">
-          <Link className="navbar-brand" to={"/sign-in"}>positronX.io</Link>
+          <Link className="navbar-brand" to={"/sign-in"}>Travel.com</Link>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
@@ -27,7 +27,7 @@ const Routes = ()=>{
       </nav>
 
       <div className="auth-wrapper">
-        <div className="auth-inner">
+        <div className="auth-inner"> */}
 
 
 
@@ -36,9 +36,9 @@ const Routes = ()=>{
                 <Route path="/login" exact component={Login} />
                 <Route path="/signup" exact component={SignUp} />
             </Switch>
-            </div>
+            {/* </div>
       </div>
-    </div>
+    </div> */}
         </BrowserRouter>
     )
 }
