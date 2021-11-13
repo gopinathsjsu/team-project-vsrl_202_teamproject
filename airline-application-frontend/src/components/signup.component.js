@@ -1,36 +1,77 @@
 import React, { Component } from "react";
+import { Form,Button,Container,Row,Col } from "react-bootstrap";
 
 export default class SignUp extends Component {
     render() {
         return (
-            <form>
-                <h3>Sign Up</h3>
+            <Container>
+                    <h1 className="shadow-sm text-success mt-5 p-3 text-center rounded">SignUp</h1>
+                    <Row className="mt-5">
+                        <Col lg={5} md={6} sm={12} className="p-5 m-auto shadow-sm rounded-lg">
+                    
+                    <Form>
 
-                <div className="form-group">
-                    <label>First name</label>
-                    <input type="text" className="form-control" placeholder="First name" />
-                </div>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>First Name</Form.Label>
 
-                <div className="form-group">
-                    <label>Last name</label>
-                    <input type="text" className="form-control" placeholder="Last name" />
-                </div>
+                    <Form.Control type="text" placeholder="Enter you first name" />
+                        
+                    </Form.Group>
 
-                <div className="form-group">
-                    <label>Email address</label>
-                    <input type="email" className="form-control" placeholder="Enter email" />
-                </div>
 
-                <div className="form-group">
-                    <label>Password</label>
-                    <input type="password" className="form-control" placeholder="Enter password" />
-                </div>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Last Name</Form.Label>
 
-                <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
-                <p className="forgot-password text-right">
-                    Already registered <a href="#">sign in?</a>
-                </p>
-            </form>
+                    <Form.Control type="text" placeholder="Enter your last name" />
+                        
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Address</Form.Label>
+
+                    <Form.Control type="text" placeholder="Enter your address here" />
+                        
+                    </Form.Group>
+
+
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Phone Number</Form.Label>
+
+                    <Form.Control type="text" placeholder="Enter your phone number" />
+                        
+                    </Form.Group>
+
+
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Email address</Form.Label>
+
+                    <Form.Control type="email" placeholder="Enter email" />
+                        
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control type="password" placeholder="Password" />
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Label>Confirm Password</Form.Label>
+                        <Form.Control type="password" placeholder="Password" />
+                    </Form.Group>
+
+
+
+                    
+                    <Button variant="success btn-block" type="submit">
+                        SignUp
+                    </Button>
+                </Form>
+                        </Col>
+                    </Row>
+                    
+                </Container>
+
+
         );
     }
 }
