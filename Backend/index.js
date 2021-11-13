@@ -21,7 +21,7 @@ mongoose.connect(process.env.DATABASE, {
     }).catch(console.log("DB CONNECTED FAILED"))
 
 //PORT
-const port = process.env.PORT || 8001;
+const port = process.env.PORT || 8004;
 
 app.listen(port, () => {
     console.log(`app is running at ${port}`);
