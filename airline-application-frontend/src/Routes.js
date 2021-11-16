@@ -3,7 +3,8 @@ import {BrowserRouter, Switch, Route,Link} from "react-router-dom"
 import Home from "./core/Home"
 import Login from './components/login.component';
 import SignUp from './components/signup.component';
-
+import AdminRoute from './authHelper/AdminRoute'
+import AdminDashBoard from './components/AdminDashboard'
 
 const Routes = ()=>{
     return (
@@ -35,6 +36,7 @@ const Routes = ()=>{
                 <Route path="/" exact component={Home} />
                 <Route path="/login" exact component={Login} />
                 <Route path="/signup" exact component={SignUp} />
+                <AdminRoute path="/admin/dashboard" exact component={AdminDashBoard}/>
             </Switch>
             {/* </div>
       </div>
