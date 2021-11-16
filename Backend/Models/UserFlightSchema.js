@@ -1,5 +1,4 @@
 var mongoose= require('mongoose') ;
-import { v4 as uuidv4 } from 'uuid';
 
 
 const userFlightSchema = new mongoose.Schema(
@@ -38,4 +37,4 @@ const userFlightSchema = new mongoose.Schema(
 }
 )
 
-module.exports=mongoose.model("userFlightSchema",userFlightSchema);
+module.exports=mongoose.model("UserFlightSchema",userFlightSchema);

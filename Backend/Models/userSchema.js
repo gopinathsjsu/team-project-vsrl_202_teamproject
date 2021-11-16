@@ -9,23 +9,23 @@ const userSchema = new mongoose.Schema(
         maxlength: 32,
         trim: true
     },
-    lastName: {
+      lastName: {
         type: String,
         required: true,
         maxlength: 32,
         true: true
     },
-    Address: {
+    address: {
         type: String,
         maxlength: 150,
     },
-    EmailId: {
+    email: {
         type: String,
         maxlength: 50,
         unique: true,
         required: true
     },
-    PhoneNumber: {
+    phoneNumber: {
         type: Number,
         maxlength: 10,
         unique: true,
@@ -46,7 +46,8 @@ const userSchema = new mongoose.Schema(
     flightId: {
         type: mongoose.Schema.Types.ObjectId,
         ref:"FlightSchema"
-    }
+    },
+    salt: String
  }
 )
 

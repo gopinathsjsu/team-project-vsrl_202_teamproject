@@ -21,7 +21,7 @@ exports.signup=(req,res) =>{
         }
         res.json({
             name:user.firstName,
-            email:user.EmailId,
+            email:user.email,
             id:user._id
         });
      });
@@ -37,7 +37,7 @@ exports.signup=(req,res) =>{
         });
     }
 
-    User.findOne({email},(err,user)=>{
+    UserSchema.findOne({email},(err,user)=>{
         if(err || !user){
             return res.status(400).json({
                 error:"User email does not exist "

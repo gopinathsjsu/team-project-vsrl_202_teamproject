@@ -5,12 +5,12 @@ const router = express.Router();
 const {createAirHostressDetails,createPassengerDetails,createPilotDetails,createFlight,editFlight,editFlights,getFlightById,deleteFlight,deleteFlights,getAllFlights,getFlight,getAllPassengers,getAllPilots,getAllAirhostress} = require("../Controllers/adminController");
 
 
-router.param("flightId",getFlightById);
+//router.param("flightId",getFlightById);
 
 router.post("/admin/createFlight",createFlight);
 router.post("/admin/editFlight",editFlight);
 router.put("/admin/editFlights",editFlights);
-router.delete("/admin/deleteFlight", deleteFlight);
+router.delete("/admin/deleteFlight/:flightId", deleteFlight);
 router.delete("/admin/deleteFlights", deleteFlights);
 router.get("/admin/getAllFlights",getAllFlights);
 router.get("/admin/getFlight",getFlight);

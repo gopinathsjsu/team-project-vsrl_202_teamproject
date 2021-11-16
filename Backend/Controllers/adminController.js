@@ -41,7 +41,7 @@ if(mongoose.Types.ObjectId.isValid(flight.id)) {
     }
 }
 exports.deleteFlight=(req,res) =>{
-    var flightId =req.body._id;
+    var flightId =req.params.flightId;
     if(mongoose.Types.ObjectId.isValid(flightId)) {
         return FlightSchema.findOneAndRemove({_id: flightId})
           .then((docs)=>{

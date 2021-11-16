@@ -23,13 +23,13 @@ const FlightSchema = new Schema({
     required: true,
     maxlength: 50   
   },
-  arrivalTime:{
-    type: Date,
+  arrivalDate:{
+    type: String,
     required: true,
     maxlength: 50   
   },
-  departureTime:{
-    type: Date,
+  departureDate:{
+    type: String,
     required: true,
     maxlength: 50   
   },
@@ -49,8 +49,12 @@ const FlightSchema = new Schema({
     required: true,
     maxlength: 50 ,
     default:Date.now 
+  },
+  price:{
+    type: Number,
+    required: true,
+    default: 0
   }
-  
 });
 
 module.exports=mongoose.model("FlightSchema",FlightSchema);
