@@ -1,7 +1,12 @@
 import React, { Component } from "react";
 import { Form,Button,Container,Row,Col } from "react-bootstrap";
 
+
+
+
+
 export default class SignUp extends Component {
+
     render() {
         return (
             <Container>

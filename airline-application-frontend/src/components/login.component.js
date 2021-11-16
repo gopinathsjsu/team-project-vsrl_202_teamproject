@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, { Component,useState } from "react";
 import { ToastContainer,toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { Form,Button,Container,Row,Col } from "react-bootstrap";
 export default class Login extends Component {
-    
+   
 
     render() {
         return (
@@ -24,7 +24,7 @@ export default class Login extends Component {
                         <Form.Control type="password" placeholder="Password" />
                     </Form.Group>
                     
-                    <Button variant="success btn-block" type="submit">
+                    <Button variant="btn btn-success btn-block" type="submit">
                         Login
                     </Button>
                     </Form>
