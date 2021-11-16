@@ -23,3 +23,55 @@ Sprint 2  :- 10/10/2021 - 10/17/2021
  - Select one of the XP Core Values and keep a journal of how the team kept these values throughout the project.
 	The team maintained the "COMMUNICATION" value throughout the week by sitting together one day and having 1 sprint discussion call.
 	
+	
+
+	Sprint 3 :- 10/18/2021 - 10/24/2021
+-Weekly Scrum Report
+	- What tasks did I work on / complete?
+		 1) Created API's for showing passenger, airhostress and pilot details
+		 2) Solved bugs 
+	- What am I planning to work on next?
+		 Revising react
+		 
+	- What tasks are blocked waiting on another team member?
+		1. None
+ - Select one of the XP Core Values and keep a journal of how the team kept these values throughout the project.
+	The team is maintaining  "COMMUNICATION" value throughout the week where we sit together one day and have 1 sprint discussion call every friday.
+
+	Sprint 4 :- 10/25/2021 - 10/31/2021
+-Weekly Scrum Report
+	- What tasks did I work on / complete?
+		 - Revised ReactJs
+		 - Solved bugs
+	- What am I planning to work on next?
+		 - Developing home page in React 
+		 
+	- What tasks are blocked waiting on another team member?
+		1. None		
+	- Select one of the XP Core Values and keep a journal of how the team kept these values throughout the project.
+	The team is maintaining  "COMMUNICATION" value throughout the week where we sit together one day and have 1 sprint discussion call every friday.
+
+
+	Sprint 5 :- 11/01/2021 - 11/07/2021
+-Weekly Scrum Report
+	- What tasks did I work on / complete?
+		 -> Designed Home page in react
+	- What am I planning to work on next?
+		 -> Connecting frontend with backend and adding some features like show flights
+	- What tasks are blocked waiting on another team member?
+		1. None
+	- Select one of the XP Core Values and keep a journal of how the team kept these values throughout the project.
+	The team is maintaining  "COMMUNICATION" value throughout the week where we sit together one day and have 1 sprint discussion call every friday.
+
+
+
+	Sprint 6 :- 11/08/2021 - 11/14/2021
+	-Weekly Scrum Report
+	- What tasks did I work on / complete?
+		 -> Added Show flights feature
+	- What am I planning to work on next?
+		 -> Adding Show flight status feature and adding admin panel	 
+	- What tasks are blocked waiting on another team member?
+		1. None
+	- Select one of the XP Core Values and keep a journal of how the team kept these values throughout the project.
+	The team is maintaining  "COMMUNICATION" value throughout the week where we sit together one day and have 1 sprint discussion call every friday.
