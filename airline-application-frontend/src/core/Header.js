@@ -10,7 +10,8 @@ const Header = ()=>{
     const [key, setKey] = useState('Book');
 
     return (
-        <div className="header" >
+        <div className="header" style={{height: "800px"}}>
+            <div style={{padding: 10}}></div>
             <Container>
                 <Tabs
                 id="controlled-tab-example"

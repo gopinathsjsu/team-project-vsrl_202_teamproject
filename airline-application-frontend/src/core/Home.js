@@ -5,7 +5,7 @@ const Home = ()=>{
     return(
         <div className="home">
             {/* <AppBar/> */}
-            <p>HI</p>
+            <h1 style={{backgroundColor:'#5c0931'}}>Airline Application</h1>
             <Header/>
             
         </div>

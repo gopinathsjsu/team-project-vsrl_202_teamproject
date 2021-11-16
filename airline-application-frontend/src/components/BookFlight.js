@@ -71,16 +71,18 @@ const BookFlight=()=> {
           value={arrivalDate}
           onChange={(e) => setArrivalDate(e.target.value)}
         />
-        <FormControl
+        {/* <FormControl
           aria-label="Example text with button addon"
           aria-describedby="basic-addon1"
           placeholder="Passanger"
-        />
+        /> */}
+        
       </InputGroup>
       <Button variant="outline-secondary" id="button-addon1" onClick={ShowFlights}>
         Show Flights
       </Button>
       {/* {performRedirect()}  */}
+      <div style={{padding: 10}}></div>
       {redirect && <FlightSelection data={flightData}/>}
     </div>
   );
