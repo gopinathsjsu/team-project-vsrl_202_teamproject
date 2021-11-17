@@ -1,23 +1,23 @@
 import React, { Component } from "react";
 import { Form,Button,Container,Row,Col } from "react-bootstrap";
-import { Redirect } from "react-router";
 import { signin,authenticate, isAuthenticated } from "../authHelper";
 import { useState } from "react";
 import { signup } from "../authHelper";
+import { Link } from "react-router-dom";
 
 const SignUp =()=> {
 
 
     const [values,setValues]=useState({
+        firstname:"",
+        lastname:"",
         email:"",
         password:"",
         error:"",
-        loading:false,
-        Redirect:false
+        success:false
     });
     
-    const {email,password,error,loading,Redirect}=values;
-    const user=isAuthenticated();
+    const {firstname,lastname,email,password,error,success}=values;
     
     const handleChange=name=>event=>{
         setValues({...values,error:false,[name]:event.target.value})
@@ -26,18 +26,36 @@ const SignUp =()=> {
     const onSubmit = event =>{
         event.preventDefault();
         setValues({...values,error:false});
-         signup({email,password})
+         signup({firstname,lastname,email,password})
          .then(data=>{
              if(data.error){
                  setValues({...values,error:data.error,success:false});
              }
              else{
-                 setValues({...values,email:"",password:"",success:true});
+                 setValues({...values,firstname:"",lastname:"",email:"",password:"",success:true});
              }
          })
          .catch(console.log("Error in signup "))
     };
-    
+
+
+
+    const successMessage=()=>{
+       return(<div className="alert alert-success"
+        style={{display:success? "":"none"}}>
+            New account was created successfully!
+            
+            <Link to="/sign-in">Login Here</Link>
+        </div>);
+    }
+
+    const errorMessage=()=>{
+        return (<div className="alert alert-danger"
+        style={{display:error ? "":"none"}}>
+            {error}
+        </div>);
+    }
+
 
         return (
             <Container>
@@ -50,7 +68,7 @@ const SignUp =()=> {
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>First Name</Form.Label>
 
-                    <Form.Control type="text" placeholder="Enter you first name" />
+                    <Form.Control type="text" value={firstname} onChange={handleChange("firstname")} placeholder="Enter you first name" />
                         
                     </Form.Group>
 
@@ -58,14 +76,14 @@ const SignUp =()=> {
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Last Name</Form.Label>
 
-                    <Form.Control type="text" placeholder="Enter your last name" />
+                    <Form.Control type="text" value={lastname} onChange={handleChange("lastnamename")} placeholder="Enter your last name" />
                         
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Address</Form.Label>
 
-                    <Form.Control type="text" placeholder="Enter your address here" />
+                    <Form.Control type="text"  placeholder="Enter your address here" />
                         
                     </Form.Group>
 
@@ -81,20 +99,21 @@ const SignUp =()=> {
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label >Email address</Form.Label>
 
-                    <Form.Control type="email" placeholder="Enter email" value={email} 
+                    <Form.Control type="email" value={email} placeholder="Enter email" value={email} 
                     onChange={handleChange("email")}/>
                         
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" value={password}
-                        onChange={handleChange("email")} />
+                        <Form.Control value={password} type="password" placeholder="Password" value={password}
+                        onChange={handleChange("password")} />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Confirm Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" />
+                        <Form.Control value={password} type="password" placeholder="Password" 
+                        onChange={handleChange("password")} />
                     </Form.Group>
                     
                     <Button variant="success btn-block" onClick={onSubmit} type="submit">
@@ -107,6 +126,6 @@ const SignUp =()=> {
                 </Container>
 
 
-        );
+        )
         }
     export default SignUp;
