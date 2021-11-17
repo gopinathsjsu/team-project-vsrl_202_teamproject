@@ -3,7 +3,7 @@ import {BrowserRouter, Switch, Route,Link} from "react-router-dom"
 import Home from "./core/Home"
 import Login from './components/login.component';
 import SignUp from './components/signup.component';
-
+import FlightBooking from './components/FlightBooking';
 
 const Routes = ()=>{
     return (
@@ -35,6 +35,7 @@ const Routes = ()=>{
                 <Route path="/" exact component={Home} />
                 <Route path="/login" exact component={Login} />
                 <Route path="/signup" exact component={SignUp} />
+                <Route path="/FlightBooking" exact component={FlightBooking} />
             </Switch>
             {/* </div>
       </div>
