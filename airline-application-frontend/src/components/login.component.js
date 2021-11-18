@@ -1,3 +1,4 @@
+import MyNavbar from "./NavBar";
 import React, { Component,useState } from "react";
 import { ToastContainer,toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
@@ -84,7 +85,9 @@ import { Link,Redirect } from "react-router-dom";
             
     
         return (
+            
                 <Container>
+                    <MyNavbar />
                     {/* {loadingMessage()} */}
                     {error && errorMessage()}
                     <h1 className="shadow-sm text-success mt-5 p-3 text-center rounded">Login</h1>
