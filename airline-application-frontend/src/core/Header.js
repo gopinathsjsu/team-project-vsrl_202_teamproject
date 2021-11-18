@@ -5,8 +5,7 @@ import BookFlight from "../components/BookFlight";
 import MyTrips from "../components/MyTrips";
 import Checkin from "../components/Checkin";
 import FlightStatus from '../components/FlightStatus';
-import Login from '../components/login.component';
-import SignUp from '../components/signup.component';
+
 
 const Header = ()=>{
     const [key, setKey] = useState('Book');
@@ -35,18 +34,6 @@ const Header = ()=>{
                         {/* <Sonnet /> */}
                         <FlightStatus/>
                     </Tab>
-
-                    
-                    <Tab eventKey="login" title="Login">
-                        {/* <Sonnet /> */}
-                        <Login/>
-                    </Tab>
-
-                    <Tab eventKey="signup" title="SignUp">
-                        {/* <Sonnet /> */}
-                        <SignUp/>
-                    </Tab>
-
 
                 </Tabs>
             </Container>

@@ -85,8 +85,8 @@ import { Link,Redirect } from "react-router-dom";
     
         return (
                 <Container>
-                    {loadingMessage()}
-                    {errorMessage()}
+                    {/* {loadingMessage()} */}
+                    {error && errorMessage()}
                     <h1 className="shadow-sm text-success mt-5 p-3 text-center rounded">Login</h1>
                     <Row className="mt-5">
                         <Col lg={5} md={6} sm={12} className="p-5 m-auto shadow-sm rounded-lg">
@@ -105,12 +105,12 @@ import { Link,Redirect } from "react-router-dom";
                     
                     <Button variant="btn btn-success btn-block" type="submit" onClick={onSubmit}>
                         Login
-                       <p className="text-white text-center">{JSON.stringify(values)}</p> 
+                       {/* <p className="text-white text-center">{JSON.stringify(values)}</p>  */}
                     </Button>
                     
                     </Form>
                     {performRedirect()};
-                    <p className="text-white text-center"> {JSON.stringify(values)}</p>
+                    {/* <p className="text-white text-center"> {JSON.stringify(values)}</p> */}
                     </Col>
                     </Row>
                     
