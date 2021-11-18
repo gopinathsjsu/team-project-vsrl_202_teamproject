@@ -5,6 +5,7 @@ import Login from './components/login.component';
 import SignUp from './components/signup.component';
 import AdminRoute from './authHelper/AdminRoute'
 import AdminDashBoard from './components/AdminDashboard'
+import FlightBooking from './components/FlightBooking';
 
 const Routes = ()=>{
     return (
@@ -37,6 +38,7 @@ const Routes = ()=>{
                 <Route path="/login" exact component={Login} />
                 <Route path="/signup" exact component={SignUp} />
                 <AdminRoute path="/admin/dashboard" exact component={AdminDashBoard}/>
+                <Route path="/FlightBooking" exact component={FlightBooking} />
             </Switch>
             {/* </div>
       </div>
