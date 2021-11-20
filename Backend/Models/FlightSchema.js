@@ -8,11 +8,11 @@ const FlightSchema = new Schema({
     maxlength: 30,    
     unique: true
   },
-  pilotId: {
-    type: Array,
-    required: true,
-    maxlength: 15    
-  },
+  // pilotId: {
+  //   type: Array,
+  //   required: true,
+  //   maxlength: 15    
+  // },
   arrivalLocation:{
     type: String,
     required: true,
@@ -33,11 +33,11 @@ const FlightSchema = new Schema({
     required: true,
     maxlength: 50   
   },
-  status:{
-    type:String,
-    required:true,
-    maxlength:30
-  },
+  // status:{
+  //   type:String,
+  //   required:true,
+  //   maxlength:30
+  // },
   createdDateTime:{
     type: Date,
     required: true,

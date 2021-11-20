@@ -7,6 +7,7 @@ import AdminRoute from './authHelper/AdminRoute'
 import AdminDashBoard from './components/AdminDashboard'
 import FlightBooking from './components/FlightBooking';
 import SignOut from './components/SignOut';
+import AddFlight from './admin/AddFlight'
 
 const Routes = ()=>{
     return (
@@ -39,6 +40,7 @@ const Routes = ()=>{
                 <Route path="/login" exact component={Login} />
                 <Route path="/signup" exact component={SignUp} />
                 <AdminRoute path="/admin/dashboard" exact component={AdminDashBoard}/>
+                <AdminRoute path="/admin/create/flights" exact component={AddFlight}/>
                 <Route path="/FlightBooking" exact component={FlightBooking} />
                 <Route path="/signout" exact component={SignOut}/>
             </Switch>
