@@ -1,8 +1,6 @@
-import { API } from "../../backend";
 
 export const showFlights = flights => {
-  console.log(API);
-    return fetch(`http://localhost:8001/api//user/showFlights`, {
+    return fetch(`${process.env.REACT_APP_BACKEND}user/showFlights`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -17,7 +15,7 @@ export const showFlights = flights => {
   };
 
   export const showFlight = flightNumber => {
-      return fetch(`http://localhost:8001/api/user/showFlight`, {
+      return fetch(`${process.env.REACT_APP_BACKEND}user/showFlight`, {
         method: "POST",
         headers: {
           Accept: "application/json",

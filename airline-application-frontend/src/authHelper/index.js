@@ -1,8 +1,5 @@
-import {API} from "../backend"
-
-    
     export const signup = user =>{
-    return fetch(`http://localhost:8004/api/signup`,{
+    return fetch(`${process.env.REACT_APP_BACKEND}signup`,{
         method: "POST",
         headers:{
             Accept: "application/json",
@@ -18,7 +15,7 @@ import {API} from "../backend"
 }
 
 export const signin = user =>{
-    return fetch(`http://localhost:8004/api/signin`,{
+    return fetch(`${process.env.REACT_APP_BACKEND}signin`,{
         method: "POST",
         headers:{
             Accept: "application/json",
