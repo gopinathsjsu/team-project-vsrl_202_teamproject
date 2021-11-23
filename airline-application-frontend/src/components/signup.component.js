@@ -61,13 +61,13 @@ const SignUp =()=> {
 
 
         return (
-            <Container>
+            <Container fluid style={{backgroundColor: "#b5d2fd",marginRight:0,marginLeft:0,paddingLeft:0,paddingRight:0}}>
                  <MyNavbar />
-                    <h1 className="shadow-sm text-success mt-5 p-3 text-center rounded">SignUp</h1>
+                    <h1 className="shadow-sm mt-5 p-3 text-center rounded" style={{color:"#0D6EFD"}}>SignUp</h1>
                     <Row className="mt-5">
                         <Col lg={5} md={6} sm={12} className="p-5 m-auto shadow-sm rounded-lg">
                     
-                    <Form>
+                    <Form >
 
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>First Name</Form.Label>
@@ -120,7 +120,7 @@ const SignUp =()=> {
                         onChange={handleChange("password")} />
                     </Form.Group>
                     
-                    <Button variant="success btn-block" onClick={onSubmit} type="submit">
+                    <Button style={{backgroundColor: "rgb(13, 110, 253)", color: "white"}} variant="success btn-block" onClick={onSubmit} type="submit">
                         SignUp
                     </Button>
                 </Form>
