@@ -12,13 +12,15 @@ const SignUp =()=> {
     const [values,setValues]=useState({
         firstname:"",
         lastname:"",
+        address:"",
+        phone:"",
         email:"",
         password:"",
         error:"",
         success:false
     });
     
-    const {firstname,lastname,email,password,error,success}=values;
+    const {firstname,lastname,email,address,phone,password,error,success}=values;
     
     const handleChange=name=>event=>{
         setValues({...values,error:false,[name]:event.target.value})
@@ -27,13 +29,13 @@ const SignUp =()=> {
     const onSubmit = event =>{
         event.preventDefault();
         setValues({...values,error:false});
-         signup({firstname,lastname,email,password})
+         signup({firstname,lastname,email,address,phone,password})
          .then(data=>{
              if(data.error){
                  setValues({...values,error:data.error,success:false});
              }
              else{
-                 setValues({...values,firstname:"",lastname:"",email:"",password:"",success:true});
+                 setValues({...values,firstname:"",lastname:"",email:"",address:"",phone:"",password:"",success:true});
              }
          })
          .catch(console.log("Error in signup "))
@@ -78,14 +80,14 @@ const SignUp =()=> {
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Last Name</Form.Label>
 
-                    <Form.Control type="text" value={lastname} onChange={handleChange("lastnamename")} placeholder="Enter your last name" />
+                    <Form.Control type="text" value={lastname} onChange={handleChange("lastname")} placeholder="Enter your last name" />
                         
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Address</Form.Label>
 
-                    <Form.Control type="text"  placeholder="Enter your address here" />
+                    <Form.Control type="text" value={address} onChange={handleChange("address")} placeholder="Enter your address here" />
                         
                     </Form.Group>
 
@@ -93,7 +95,7 @@ const SignUp =()=> {
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Phone Number</Form.Label>
 
-                    <Form.Control type="text" placeholder="Enter your phone number" />
+                    <Form.Control type="text" value={phone} onChange={handleChange("phone")} placeholder="Enter your phone number" />
                         
                     </Form.Group>
 
