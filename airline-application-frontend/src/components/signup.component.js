@@ -10,17 +10,17 @@ const SignUp =()=> {
 
 
     const [values,setValues]=useState({
-        firstname:"",
-        lastname:"",
+        firstName:"",
+        lastName:"",
         address:"",
-        phone:"",
+        phoneNumber:"",
         email:"",
         password:"",
         error:"",
         success:false
     });
     
-    const {firstname,lastname,email,address,phone,password,error,success}=values;
+    const {firstName,lastName,email,address,phoneNumber,password,error,success}=values;
     
     const handleChange=name=>event=>{
         setValues({...values,error:false,[name]:event.target.value})
@@ -29,16 +29,16 @@ const SignUp =()=> {
     const onSubmit = event =>{
         event.preventDefault();
         setValues({...values,error:false});
-         signup({firstname,lastname,email,address,phone,password})
+         signup({firstName,lastName,email,address,phoneNumber,password})
          .then(data=>{
              if(data.error){
                  setValues({...values,error:data.error,success:false});
              }
-             else{
-                 setValues({...values,firstname:"",lastname:"",email:"",address:"",phone:"",password:"",success:true});
-             }
+            //  else{
+            //      setValues({...values,firstName:"",lastName:"",email:"",address:"",phone:"",password:"",success:true});
+            //  }
          })
-         .catch(console.log("Error in signup "))
+         .catch((err)=>console.log("Error in signup "+err))
     };
 
 
@@ -72,7 +72,7 @@ const SignUp =()=> {
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>First Name</Form.Label>
 
-                    <Form.Control type="text" value={firstname} onChange={handleChange("firstname")} placeholder="Enter you first name" />
+                    <Form.Control type="text" value={firstName} onChange={handleChange("firstName")} placeholder="Enter you first name" />
                         
                     </Form.Group>
 
@@ -80,7 +80,7 @@ const SignUp =()=> {
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Last Name</Form.Label>
 
-                    <Form.Control type="text" value={lastname} onChange={handleChange("lastname")} placeholder="Enter your last name" />
+                    <Form.Control type="text" value={lastName} onChange={handleChange("lastName")} placeholder="Enter your last name" />
                         
                     </Form.Group>
 
@@ -95,7 +95,7 @@ const SignUp =()=> {
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Phone Number</Form.Label>
 
-                    <Form.Control type="text" value={phone} onChange={handleChange("phone")} placeholder="Enter your phone number" />
+                    <Form.Control type="text" value={phoneNumber} onChange={handleChange("phoneNumber")} placeholder="Enter your phone number" />
                         
                     </Form.Group>
 
