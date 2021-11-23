@@ -50,6 +50,21 @@ const FlightSchema = new Schema({
     maxlength: 50 ,
     default:Date.now 
   },
+  arrivalTime:{
+    type: String,
+    required: true,
+    maxlength: 50 
+  },
+  departureTime:{
+    type: String,
+    required: true,
+    maxlength: 50 
+  },
+  status:{
+    type:String,
+    required:true,
+    maxlength:30
+  },
   price:{
     type: Number,
     required: true,

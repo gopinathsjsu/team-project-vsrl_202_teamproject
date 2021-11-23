@@ -11,7 +11,8 @@ const Header = ()=>{
     const [key, setKey] = useState('Book');
 
     return (
-        <div className="header" >
+        <div className="header" style={{height: "800px"}}>
+            <div style={{padding: 10}}>
             <Container>
                 <Tabs
                 id="controlled-tab-example"
@@ -37,6 +38,7 @@ const Header = ()=>{
 
                 </Tabs>
             </Container>
+            </div>
         </div>
     )
 }

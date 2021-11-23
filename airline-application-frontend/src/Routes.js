@@ -8,6 +8,7 @@ import AdminDashBoard from './components/AdminDashboard'
 import FlightBooking from './components/FlightBooking';
 import SignOut from './components/SignOut';
 import AddFlight from './admin/AddFlight'
+import Payment from './components/Payment';
 
 const Routes = ()=>{
     return (
@@ -43,6 +44,7 @@ const Routes = ()=>{
                 <AdminRoute path="/admin/create/flights" exact component={AddFlight}/>
                 <Route path="/FlightBooking" exact component={FlightBooking} />
                 <Route path="/signout" exact component={SignOut}/>
+                <Route path="/Payment" exact component={Payment} />
             </Switch>
             {/* </div>
       </div>

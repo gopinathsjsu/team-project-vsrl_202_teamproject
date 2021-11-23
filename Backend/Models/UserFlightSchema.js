@@ -16,7 +16,14 @@ const userFlightSchema = new mongoose.Schema(
         required: true,
 
         },
-        
+        passengers:{
+            type:Array,
+            required:true
+        },
+        price:{
+            type:Number,
+            required:true
+        },
         numberOfPassengers:{
             type:Number,
             required:true
@@ -24,15 +31,15 @@ const userFlightSchema = new mongoose.Schema(
 
         ticketNumber:{
             type: mongoose.Schema.Types.ObjectId,
-            required:true
+           // required:true
         },
 
-        seatNumber:{
-            type:String,
-            required:true,
-            maxlength:3
+        // seatNumber:{
+        //     type:Array,
+        //     required:true,
+        //    // maxlength:3
 
-        }
+        // }
 
 }
 )
