@@ -40,13 +40,13 @@ exports.showFlight = (req,res) =>{
 
 }
 
-const CalculateRewardPoints = (currentRewards, distance)=>{
-    return currentRewards+(distance/1000);
+const CalculateRewardPoints = (currentRewards, price)=>{
+    return currentRewards+(price/100);
 }
 
 exports.bookFlight = (req,res) => {
     const userFlight= new UserFlightSchema(req.body);
-    rewardPoints = CalculateRewardPoints(req.body.rewardPoints, req.body.distance);
+    rewardPoints = CalculateRewardPoints(req.body.rewardPoints, req.body.price);
     req.body.rewardPoints = rewardPoints;
     userFlight.save((err, userFlight)=>{
         if(err){
