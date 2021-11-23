@@ -1,4 +1,4 @@
-const user = require("../Models/userSchema")
+const UserSchema = require("../Models/userSchema")
 const UserFlightSchema = require("../Models/UserFlightSchema")
 const FlightSchema = require("../Models/FlightSchema")
 
@@ -40,8 +40,14 @@ exports.showFlight = (req,res) =>{
 
 }
 
+const CalculateRewardPoints = (currentRewards, distance)=>{
+    return currentRewards+(distance/1000);
+}
+
 exports.bookFlight = (req,res) => {
     const userFlight= new UserFlightSchema(req.body);
+    rewardPoints = CalculateRewardPoints(req.body.rewardPoints, req.body.distance);
+    req.body.rewardPoints = rewardPoints;
     userFlight.save((err, userFlight)=>{
         if(err){
             return res.status(400).json({
