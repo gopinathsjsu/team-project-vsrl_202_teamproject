@@ -46,6 +46,10 @@ const userSchema = new mongoose.Schema(
         type: mongoose.Schema.Types.ObjectId,
         ref:"FlightSchema"
     },
+    gender:{
+      type:String,
+      required:true,
+    },
     salt: String
  }
 )

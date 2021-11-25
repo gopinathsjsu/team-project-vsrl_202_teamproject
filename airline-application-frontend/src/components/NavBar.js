@@ -9,15 +9,15 @@ function MyNavbar (){
         return (
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
-            <Navbar.Brand href="http://localhost:3005/">Travel Website</Navbar.Brand>
+            <Navbar.Brand href="http://localhost:3006/">Travel Website</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
              
-              <Nav>
+              <Nav className="ms-auto">
                  { (!isAuthenticated() && (
-                    <Fragment>
-                <Nav.Link href="http://localhost:3005/login">Login</Nav.Link>
-                <Nav.Link eventKey={2} href="http://localhost:3005/signup">
+                    <Fragment className="mr-auto">
+                <Nav.Link  href="http://localhost:3006/login">Login</Nav.Link>
+                <Nav.Link eventKey={2} href="http://localhost:3006/signup">
                   SignUp
                 </Nav.Link>
                 </Fragment>

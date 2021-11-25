@@ -5,6 +5,7 @@ import { signin,authenticate, isAuthenticated } from "../authHelper";
 import { useState } from "react";
 import { signup } from "../authHelper";
 import { Link } from "react-router-dom";
+import Select from "react-select";
 
 const SignUp =()=> {
 
@@ -14,13 +15,14 @@ const SignUp =()=> {
         lastName:"",
         address:"",
         phoneNumber:"",
+        gender:"",
         email:"",
         password:"",
         error:"",
         success:false
     });
     
-    const {firstName,lastName,email,address,phoneNumber,password,error,success}=values;
+    const {firstName,lastName,email,address,phoneNumber,gender,password,error,success}=values;
     
     const handleChange=name=>event=>{
         setValues({...values,error:false,[name]:event.target.value})
@@ -29,14 +31,14 @@ const SignUp =()=> {
     const onSubmit = event =>{
         event.preventDefault();
         setValues({...values,error:false});
-         signup({firstName,lastName,email,address,phoneNumber,password})
+         signup({firstName,lastName,email,address,phoneNumber,gender,password})
          .then(data=>{
              if(data.error){
                  setValues({...values,error:data.error,success:false});
              }
-            //  else{
-            //      setValues({...values,firstName:"",lastName:"",email:"",address:"",phone:"",password:"",success:true});
-            //  }
+              else{
+                  setValues({...values,firstName:"",lastName:"",email:"",address:"",phone:"",password:"",success:true});
+              }
          })
          .catch((err)=>console.log("Error in signup "+err))
     };
@@ -58,6 +60,11 @@ const SignUp =()=> {
             {error}
         </div>);
     }
+
+    const actions=[
+        {label:"Male"},
+        {label:"Female"}
+    ];
 
 
         return (
@@ -82,6 +89,13 @@ const SignUp =()=> {
 
                     <Form.Control type="text" value={lastName} onChange={handleChange("lastName")} placeholder="Enter your last name" />
                         
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Gender</Form.Label>
+
+                    
+                    <Select type="text" value={gender} onChange={handleChange("gender")} placeholder="Select a gender" options={actions} />     
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicEmail">

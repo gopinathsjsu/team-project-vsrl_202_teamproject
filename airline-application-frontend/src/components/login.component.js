@@ -86,7 +86,7 @@ import { Link,Redirect } from "react-router-dom";
     
         return (
             
-                <Container fluid style={{paddingLeft:0,paddingRight:0, backgroundColor: "#b5d2fd"}}>
+                <Container fluid style={{paddingLeft:0,paddingRight:0,marginRight:0,marginLeft:0, backgroundColor: "#b5d2fd"}}>
                     <MyNavbar />
                     {/* {loadingMessage()} */}
                     {error && errorMessage()}
