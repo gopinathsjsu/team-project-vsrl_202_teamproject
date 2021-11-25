@@ -86,22 +86,8 @@ export default class FlightBooking extends Component {
         // event.preventDefault(); 
       //   window.location.href="/Payment";
       this.setState({redirect: true});
-    //    return fetch(`http://localhost:8001/api/user/bookFlight`, {
-    //   method: "POST",
-    //   headers: {
-    //     Accept: "application/json",
-    //     "Content-Type": "application/json"
-    //   },
-    //   body: JSON.stringify(this.flightDetails)
-    // })
-    //   .then(response => {
-    //     return response.json();
-    //   })
-    //   .catch(err => console.log(err));
-   // render() 
-    //{
-        return <Redirect to="/Payment"></Redirect>;
-    //}    
+
+     return <Redirect to="/Payment"></Redirect>;
       
     }
 
@@ -269,7 +255,10 @@ export default class FlightBooking extends Component {
                                             <div class="col-md-6 form-group divPAdding">
                                             <input type="text" class="form-control" id="cell" name="cell" placeholder="Total Price" value={"$"+this.flightDetails.price*this.state.clicks}></input>
                                             </div>
-                                                    
+                                            <div class="col-md-6 form-group divPAdding">
+                                            <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
+                                            <label class="form-check-label" htmlFor="exampleCheck1"> Use Reward Points?(You have x reward points)</label>
+                                            </div>      
                                             <div class="form-group">
                                                 {/* <button type="submit">Payment</button> */}
                                                 {/* <Link to="/Payment" params={{ testvalue: "hello" }} className="pure-menu-link">Payment</Link> */}

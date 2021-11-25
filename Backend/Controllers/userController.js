@@ -40,6 +40,24 @@ exports.showFlight = (req,res) =>{
 
 }
 
+
+exports.cancelFlight = (req,res) =>{
+    
+    const flightNumber = parseInt(req.body.flightNumber);;
+
+    return FlightSchema.deleteOne({flightNumber: flightNumber})
+    .exec()
+    .then((flight) => {
+        return res.json(flight);
+    })
+    .catch(error=>{
+        return {
+            error: "Flight Deletion Failed "+error
+        };
+    })
+
+}
+
 const CalculateRewardPoints = (currentRewards, price)=>{
     return currentRewards+(price/100);
 }

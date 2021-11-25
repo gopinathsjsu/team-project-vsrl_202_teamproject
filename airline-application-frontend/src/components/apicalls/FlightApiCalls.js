@@ -28,4 +28,20 @@ export const showFlights = flights => {
         })
         .catch(err => console.log(err));
     };
+
+
+    export const cancelFlight = flightNumber => {
+      return fetch(`${process.env.REACT_APP_BACKEND}user/cancelFlight`, {
+        method: "DELETE",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({"flightNumber":flightNumber})
+      })
+        .then(response => {
+          return response.json();
+        })
+        .catch(err => console.log(err));
+    };
   
