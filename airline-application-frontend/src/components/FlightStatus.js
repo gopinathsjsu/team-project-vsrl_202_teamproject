@@ -20,18 +20,29 @@ export default function FlightStatus() {
 
   return (
     <div className="my-trip-line">
-      <InputGroup>
-        <FormControl
-          aria-label="Example text with button addon"
-          aria-describedby="basic-addon1"
-          placeholder="Flight number"
-          value={flightNumber}
-          onChange={(e)=>setFlightNumber(e.target.value)}
-        />
-        
-      </InputGroup>
-      <Button onClick={SearchFlight} style={{ marginLeft: "4px" }}>Search flight</Button>
-      {redirect && <FlightSelection data={flightData}/>}
+      <div class="container">
+      <div class="row">
+          <div class="col-md-8">
+            <InputGroup>
+              <FormControl
+                aria-label="Example text with button addon"
+                aria-describedby="basic-addon1"
+                placeholder="Flight number"
+                value={flightNumber}
+                onChange={(e)=>setFlightNumber(e.target.value)}
+              />
+            </InputGroup>
+          </div>
+          <div class="col-md-4">
+            <Button onClick={SearchFlight} style={{ marginLeft: "4px" }}>Search flight</Button>
+          </div>
+        </div>
+        <div class="row mt-5">
+            <div className="myFlights">
+            {redirect && <FlightSelection data={flightData} showCancel={true} flightNumber={flightNumber}/>}
+            </div>
+        </div>
+      </div>
     </div>
   );
 }
