@@ -21,34 +21,6 @@ const AddFlight =()=>{
         </div>
     )
 
-    const handleNameChange =event=>{
-        setError("");
-        setName(event.target.value)
-    }
-
-    const handleArrivalLocationChange =event=>{
-        setError("");
-        setArrivalLocation(event.target.value)
-    }
-
-    const handleDepartureLocationChange =event=>{
-        setError("");
-        setDepartureLocation(event.target.value)
-    }
-    const handleDepartureDateChange =event=>{
-        setError("");
-        setDepartureDate(event.target.value)
-    }
-    const handleArrivalDateChange =event=>{
-        setError("");
-        setArrivalDate(event.target.value)
-    }
-
-    // const handleNameChange =event=>{
-    //     setError("");
-    //     setName(event.target.value)
-    // }
-
     const onSubmit =event=>{
         event.preventDefault();
         setError("");
@@ -84,15 +56,15 @@ const AddFlight =()=>{
         <form>
             <div className="form-group">
                 <p className="lead">Enter Flight Number</p>
-                <input type="text" onChange={handleNameChange} value={name} className="form-control my-3" autofocus required placeholder="For Ex.Summer"></input>
+                <input type="text" onChange={event=>setName(event.target.value)} value={name} className="form-control my-3" autofocus required placeholder="For Ex.Summer"></input>
                 <p className="lead">Enter Departure Location</p>
-                <input type="text" onChange={handleDepartureLocationChange} value={departureLocation} className="form-control my-3" autofocus required placeholder="For Ex.Summer"></input>
+                <input type="text" onChange={event=>setDepartureLocation(event.target.value)} value={departureLocation} className="form-control my-3" autofocus required placeholder="For Ex.Summer"></input>
                 <p className="lead">Enter Arrival Location</p>
-                <input type="text" onChange={handleArrivalLocationChange} value={arrivalLocation} className="form-control my-3" autofocus required placeholder="For Ex.Summer"></input>
+                <input type="text" onChange={event=>setArrivalLocation(event.target.value)} value={arrivalLocation} className="form-control my-3" autofocus required placeholder="For Ex.Summer"></input>
                 <p className="lead">Select Departure Date</p>
-                <input type="date" onChange={handleDepartureDateChange} value={departureDate} className="form-control my-3" autofocus required placeholder="For Ex.Summer"></input>
+                <input type="date" onChange={event=>setDepartureDate(event.target.value)} value={departureDate} className="form-control my-3" autofocus required placeholder="For Ex.Summer"></input>
                 <p className="lead">Select Arrival Date</p>
-                <input type="date" onChange={handleArrivalDateChange} value={arrivalDate} className="form-control my-3" autofocus required placeholder="For Ex.Summer"></input> 
+                <input type="date" onChange={event=>setArrivalDate(event.target.value)} value={arrivalDate} className="form-control my-3" autofocus required placeholder="For Ex.Summer"></input> 
                 <button onClick={onSubmit} className="btn btn-outline-info">Create Flight</button>
             </div>
         </form>
