@@ -2,18 +2,18 @@ import React from 'react'
 import Base from '../core/Base'
 import {isAuthenticated} from '../authHelper/index'
 import {Link} from "react-router-dom"
-
+import "../css/AdminDashboard.css"
 const AdminDashBoard = ()=>{
 
     // const {user: {name,email,role}} = isAuthenticated()
 
     const adminLeftSide = ()=>{
         return (
-            <div className="card">
+            <div className="adminCard">
                 <h4 className="card-header bg-dark text-white">Admin Navigation</h4>
             <ul className="list-group">
                 <li className="list-group-item">
-                    <Link to="/admin/create/flights" className="nav-link text-success">Create Flights</Link>
+                    <Link to="/admin/create/flights" className="nav-link text-primary">Create Flights</Link>
                 </li>
 
                  {/* <li className="list-group-item">
@@ -26,7 +26,7 @@ const AdminDashBoard = ()=>{
 
     const adminRightSide = ()=>{
         return (
-            <div className="card mb-4">
+            <div className="adminCard mb-4">
                 <h4 className="card-header">Admin Information</h4>
                 <ul className="list-group">
                     <li className="list-group-item">
@@ -48,8 +48,8 @@ const AdminDashBoard = ()=>{
     }
 
     return (
-        <Base title="Welcome to Admin area" description="Manage all of your Flights here" className="container bg-success p-4">
-            <div className="row">
+        <Base title="Welcome to Admin area" description="Manage all of your Flights here" className="container adminCard p-4">
+            <div className="adminCard row">
                 <div className="col-3">{adminLeftSide()}</div>
                 <div className="col-9">{adminRightSide()}</div>
             </div>
