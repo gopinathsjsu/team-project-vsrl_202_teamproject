@@ -25,8 +25,12 @@ function FlightSelection(props) {
       selector: 'departureLocation'
     },
     {
-      name: 'Arrival Location',
-      selector: 'arrivalLocation'
+      name: 'Departure Date',
+      selector: 'departureDate'
+    },
+    {
+      name: 'Arrival Date',
+      selector: 'arrivalDate'
     },
     {
       name: 'Price',
