@@ -39,12 +39,15 @@ export default class FlightBooking extends Component {
         this.state = {
             clicks: 0,
             show: true,
-            openPayment:0
+            openPayment:0,
+            flightData:{},
+            duration:""
         };
         
         this.IncrementItem = this.IncrementItem.bind(this);
         this.onPaymentClick = this.onPaymentClick.bind(this);
-        this.duration="";
+       // this.duration="";
+        
         // this.data = props;
         var data = this.props.location.state.flightData;
         this.flightDetails = {
@@ -70,7 +73,8 @@ export default class FlightBooking extends Component {
         // var ms = flightDetails.endTime.diff(flightDetails.startTime);
         var duration = moment.duration(ms).hours() + " hr " + moment.duration(ms).minutes() + " min";
         console.log(duration);
-        this.duration=duration;
+        this.state.flightData=this.flightDetails;
+        this.state.duration=duration;
     }
     IncrementItem() {
 
@@ -104,7 +108,7 @@ export default class FlightBooking extends Component {
                                 <Row xs={4} md={5} xl={5}>
                                     <Col>{moment(this.flightDetails.depDate).format('DD MMM, YYYY')}</Col>
                                     <Col>{this.flightDetails.deptTime+" - "+ this.flightDetails.arrTime}</Col>
-                                    <Col>{this.duration}</Col>
+                                    <Col>{this.state.duration}</Col>
                                     <Col>Nonstop</Col>
                                     <Col>${this.flightDetails.price}</Col>
                                 </Row>
@@ -124,7 +128,7 @@ export default class FlightBooking extends Component {
                                         <Col>{this.flightDetails.arrLoc}</Col>
                                     </Row>
                                 </Col>
-                                <Col>   <div class="CQYfx y52p7d">Travel time: {this.duration}</div></Col>
+                                <Col>   <div class="CQYfx y52p7d">Travel time: {this.state.duration}</div></Col>
                                 <Col>
                                     <div class="L5Okte y52p7d" jsname="vg2oCf">
                                         <ul class="elO9Ce sSHqwe JNp8ff">
@@ -263,7 +267,7 @@ export default class FlightBooking extends Component {
                                                 {/* <button type="submit">Payment</button> */}
                                                 {/* <Link to="/Payment" params={{ testvalue: "hello" }} className="pure-menu-link">Payment</Link> */}
                                                 <div>
-                                                <Link className="rounded" style={{fontFamily: "var(--bs-body-font-family)",fontSize:" var(--bs-body-font-size)",fontWeight: "var(--bs-body-font-weight)",lineHeight: "var(--bs-body-line-height)", textDecoration: "none",paddingLeft: "1rem",paddingRight:"1rem",paddingTop:"0.2rem",paddingBottom:"0.56rem", backgroundColor: "#0d6efd", color: 'white'}} to={{pathname: '/Payment',state: { flightData: this.flightDetails }}}>Payment</Link>
+                                                <Link className="rounded" style={{fontFamily: "var(--bs-body-font-family)",fontSize:" var(--bs-body-font-size)",fontWeight: "var(--bs-body-font-weight)",lineHeight: "var(--bs-body-line-height)", textDecoration: "none",paddingLeft: "1rem",paddingRight:"1rem",paddingTop:"0.2rem",paddingBottom:"0.56rem", backgroundColor: "#0d6efd", color: 'white'}} to={{pathname: '/Payment',state: { flightData: this.state }}}>Payment</Link>
                                                 </div>
                                             </div>
                                         </div>

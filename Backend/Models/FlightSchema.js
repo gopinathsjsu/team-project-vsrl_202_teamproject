@@ -70,6 +70,6 @@ const FlightSchema = new Schema({
     required: true,
     default: 0
   }
-});
+},{collection:'FlightSchema'});
 
 module.exports=mongoose.model("FlightSchema",FlightSchema);

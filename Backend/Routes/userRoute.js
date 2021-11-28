@@ -13,7 +13,7 @@ const{bookFlight, getUserById,getCurrentFlights,showFlights,showFlight,cancelFli
 const{isAuthenticated} = require("../Controllers/authController")
 const{getFlightById}= require("../Controllers/adminController");
 
-router.param("userId",getUserById);
+router.post("/user",getUserById);
 router.param("flightId",getFlightById);
 //router.post("/user/bookFlight",isAuthenticated, bookFlight);
 router.delete("/user/cancelFlight", cancelFlight);

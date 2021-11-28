@@ -85,6 +85,15 @@
     background: #f4f7f8;
     border-radius: 8px;
   }
+  .row-alignment
+  {
+      padding-left:50px;
+      width:20rem;
+  }
+  .col-padding
+  {
+      padding-left:50px;
+  }
 .passenger-count
 {
     margin-top:-2px;

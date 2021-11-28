@@ -1,7 +1,7 @@
 const UserSchema = require("../Models/userSchema")
 const UserFlightSchema = require("../Models/UserFlightSchema")
 const FlightSchema = require("../Models/FlightSchema")
-
+const mongoose = require("mongoose");
 exports.showFlights = (req,res) =>{
     
     const fromDestination = req.body.departureLocation;
@@ -57,7 +57,6 @@ exports.cancelFlight = (req,res) =>{
     })
 
 }
-
 const CalculateRewardPoints = (currentRewards, price)=>{
     return currentRewards+(price/100);
 }
@@ -81,6 +80,25 @@ exports.bookFlight = (req,res) => {
 
 }
 exports.getCurrentFlights = (req,res) => {}
-exports.getUserById = (req,res) => {}
+exports.getUserById = (req,res) => {
+    var userId =req.body.userID;
+    console.log("suer id"+userId);
+   // if(mongoose.Types.ObjectId.isValid(userId)) {
+        return UserSchema.findOne({_id:userId})
+          .then((docs)=>{
+             if(docs) {
+                 console.log(docs);
+                res.json({success:true,data:docs});                
+             } else {
+                res.json({success:false,msg:"no such user exist"});                
+             }
+        }).catch((err)=>{           
+            console.log(err);
+            res.json({success:false,msg:"error: "+err});
+        })
+    //   } else {
+    //       res.json({"success":false,msg:"please provide correct Id"});          
+    //   }
 
+}
 
