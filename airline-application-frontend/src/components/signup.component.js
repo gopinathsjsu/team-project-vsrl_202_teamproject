@@ -69,8 +69,7 @@ const SignUp =()=> {
 
         return (
             <Container fluid style={{backgroundColor: "#b5d2fd",marginRight:0,marginLeft:0,paddingLeft:0,paddingRight:0}}>
-                 <MyNavbar />
-                    <h1 className="shadow-sm mt-5 p-3 text-center rounded" style={{color:"#0D6EFD"}}>SignUp</h1>
+                    <h1 className="shadow-sm p-3 text-center rounded" style={{color:"#0D6EFD"}}>SignUp</h1>
                     <Row className="mt-5">
                         <Col lg={5} md={6} sm={12} className="p-5 m-auto shadow-sm rounded-lg">
                     

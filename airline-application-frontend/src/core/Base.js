@@ -10,7 +10,6 @@ const Base= ({
 })=> {
     return(
         <div>
-        <Menu />
            <div className="container-fluid adminCard">
                 <div className="jumbotron adminCard  text-white text-center">
                     <h2 className="display-4">{title}</h2>
