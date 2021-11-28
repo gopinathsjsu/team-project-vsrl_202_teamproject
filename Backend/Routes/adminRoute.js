@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 
-const {createAirHostressDetails,createPassengerDetails,createPilotDetails,createFlight,editFlight,editFlights,getFlightById,deleteFlight,deleteFlights,getAllFlights,getFlight,getAllPassengers,getAllPilots,getAllAirhostress} = require("../controllers/adminController");
+const {createAirHostressDetails,createPassengerDetails,createPilotDetails,createFlight,editFlight,editFlights,getFlightById,deleteFlight,deleteFlights,getAllFlights,getFlight,getAllPassengers,getAllPilots,getAllAirhostress} = require("../Controllers/adminController");
 
 
 //router.param("flightId",getFlightById);
