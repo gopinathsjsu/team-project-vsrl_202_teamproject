@@ -1,7 +1,5 @@
-import {API} from '../backend'
-
 export const createFlight = (values)=>{
-    return fetch('http://localhost:8004/api/admin/createflight',{
+    return fetch(`${process.env.REACT_APP_BACKEND}admin/createflight`,{
         method: "POST",
        headers: {
             Accept: "application/json",

@@ -5,13 +5,14 @@ import {Link} from 'react-router-dom'
 import {createFlight} from './adminapicall'
 
 const AddFlight =()=>{
-    const [name,setName] = useState("")
+    const [flightNumber,setFlightNumber] = useState("")
     const [arrivalLocation,setArrivalLocation] = useState("")
     const [departureLocation,setDepartureLocation] = useState("")
     const [departureDate,setDepartureDate] = useState("")
     const [arrivalDate,setArrivalDate] = useState("")
     const [error,setError] = useState(false)
     const [success,setSuccess] = useState(false)
+    const [price,setPrice] = useState(0)
 
     const {user,token} = isAuthenticated()
 
@@ -25,7 +26,7 @@ const AddFlight =()=>{
         event.preventDefault();
         setError("");
         setSuccess(false)
-        const values = {name,arrivalLocation,departureLocation,departureDate,arrivalDate,error};
+        const values = {flightNumber,arrivalLocation,departureLocation,departureDate,arrivalDate,price,error};
         //backend request fired
         createFlight(values)
             .then(data=>{
@@ -35,7 +36,6 @@ const AddFlight =()=>{
                 else{
                     setError("")
                     setSuccess(true)
-                    setName("")
                 }
             })
     }
@@ -56,15 +56,17 @@ const AddFlight =()=>{
         <form>
             <div className="form-group">
                 <p className="lead">Enter Flight Number</p>
-                <input type="text" onChange={event=>setName(event.target.value)} value={name} className="form-control my-3" autofocus required placeholder="For Ex.Summer"></input>
+                <input type="text" onChange={event=>setFlightNumber(event.target.value)} value={flightNumber} className="form-control my-3" autofocus required ></input>
                 <p className="lead">Enter Departure Location</p>
-                <input type="text" onChange={event=>setDepartureLocation(event.target.value)} value={departureLocation} className="form-control my-3" autofocus required placeholder="For Ex.Summer"></input>
+                <input type="text" onChange={event=>setDepartureLocation(event.target.value)} value={departureLocation} className="form-control my-3" autofocus required></input>
                 <p className="lead">Enter Arrival Location</p>
-                <input type="text" onChange={event=>setArrivalLocation(event.target.value)} value={arrivalLocation} className="form-control my-3" autofocus required placeholder="For Ex.Summer"></input>
+                <input type="text" onChange={event=>setArrivalLocation(event.target.value)} value={arrivalLocation} className="form-control my-3" autofocus required ></input>
                 <p className="lead">Select Departure Date</p>
-                <input type="date" onChange={event=>setDepartureDate(event.target.value)} value={departureDate} className="form-control my-3" autofocus required placeholder="For Ex.Summer"></input>
+                <input type="date" onChange={event=>setDepartureDate(event.target.value)} value={departureDate} className="form-control my-3" autofocus required ></input>
                 <p className="lead">Select Arrival Date</p>
-                <input type="date" onChange={event=>setArrivalDate(event.target.value)} value={arrivalDate} className="form-control my-3" autofocus required placeholder="For Ex.Summer"></input> 
+                <input type="date" onChange={event=>setArrivalDate(event.target.value)} value={arrivalDate} className="form-control my-3" autofocus required ></input> 
+                <p className="lead">Enter Price</p>
+                <input type="text" onChange={event=>setPrice(event.target.value)} value={price} className="form-control my-3" autofocus required ></input>
                 <button onClick={onSubmit} className="btn btn-outline-info">Create Flight</button>
             </div>
         </form>

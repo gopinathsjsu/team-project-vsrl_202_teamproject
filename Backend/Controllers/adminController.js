@@ -5,10 +5,10 @@ exports.createFlight=(req,res) =>{
 const flight = new FlightSchema(req.body);
 return FlightSchema.collection.insertOne(flight)
   .then((data)=>{   
-    res.json({success:true,data:data});
+    res.json({success:true,data:data,"error":false});
   }).catch((err)=>{   
     console.log(err);
-    res.json({success:false,msg:"error: "+err});
+    res.json({success:false,"error":err});
 });
 }
 exports.editFlight=(req,res) =>{
