@@ -31,7 +31,7 @@ const SignUp =()=> {
     const onSubmit = event =>{
         event.preventDefault();
         setValues({...values,error:false});
-         signup({firstName,lastName,email,address,phoneNumber,gender,password})
+         signup({firstName,lastName,email,phoneNumber,password})
          .then(data=>{
              if(data.error){
                  setValues({...values,error:data.error,success:false});
@@ -90,19 +90,19 @@ const SignUp =()=> {
                         
                     </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                    {/* <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Gender</Form.Label>
 
                     
                     <Select type="text" value={gender} onChange={handleChange("gender")} placeholder="Select a gender" options={actions} />     
-                    </Form.Group>
+                    </Form.Group> */}
 
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                    {/* <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Address</Form.Label>
 
                     <Form.Control type="text" value={address} onChange={handleChange("address")} placeholder="Enter your address here" />
                         
-                    </Form.Group>
+                    </Form.Group> */}
 
 
                     <Form.Group className="mb-3" controlId="formBasicEmail">
