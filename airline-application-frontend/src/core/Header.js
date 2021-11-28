@@ -24,13 +24,7 @@ const Header = ()=>{
                     <Tab eventKey="Book" title="Book">
                         <BookFlight/>
                     </Tab>
-                    <Tab eventKey="MyTrips" title="My Trips">
-                        <MyTrips/>
-                    </Tab>
-                    <Tab eventKey="Check-in" title="Check-in">
-                        {/* <Sonnet /> */}
-                        <Checkin/>
-                    </Tab>
+                  
                     <Tab eventKey="status" title="Flight status">
                         {/* <Sonnet /> */}
                         <FlightStatus/>

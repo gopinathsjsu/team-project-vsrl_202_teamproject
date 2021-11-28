@@ -87,7 +87,7 @@ import "../App.css"
     
         return (
             
-                <Container className="login" fluid style={{paddingLeft:0,paddingRight:0,paddingBottom:0,marginRight:0,marginLeft:0, backgroundColor: "#b5d2fd"}}>
+                <Container className="login" fluid style={{paddingLeft:0,paddingRight:0,paddingBottom:0,marginRight:0,marginLeft:0}}>
                     {/* {loadingMessage()} */}
                     {error && errorMessage()}
                     <NavBar/>

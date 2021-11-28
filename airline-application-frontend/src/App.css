@@ -5,8 +5,29 @@ html, body {
   text-align: center;
 }
 .login{
-  height:100%
+  height:100%;
+  display: block;
+  position: fixed;
+  /* background-image: url("../src/images/flights.jpeg");
+    background-size: cover;
+    background-position: bottom;
+    -webkit-backdrop-filter: blur(100px);
+    backdrop-filter: blur(100px); */
 }
+
+.login::after {
+  content: "";
+  background: url("../src/images/flights.jpeg");
+  background-size: cover;
+  opacity: 0.5; 
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
+
 
 .login-text{
   color:dodgerblue;

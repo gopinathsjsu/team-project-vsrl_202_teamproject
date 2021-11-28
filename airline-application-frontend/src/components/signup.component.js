@@ -4,7 +4,7 @@ import { Form,Button,Container,Row,Col } from "react-bootstrap";
 import { signin,authenticate, isAuthenticated } from "../authHelper";
 import { useState } from "react";
 import { signup } from "../authHelper";
-import { Link } from "react-router-dom";
+import { Link,Redirect } from "react-router-dom";
 import Select from "react-select";
 
 const SignUp =()=> {
@@ -19,10 +19,11 @@ const SignUp =()=> {
         email:"",
         password:"",
         error:"",
-        success:false
+        success:false,
+        didRedirect:false
     });
     
-    const {firstName,lastName,email,address,phoneNumber,gender,password,error,success}=values;
+    const {didRedirect,firstName,lastName,email,address,phoneNumber,gender,password,error,success}=values;
     
     const handleChange=name=>event=>{
         setValues({...values,error:false,[name]:event.target.value})
@@ -37,13 +38,21 @@ const SignUp =()=> {
                  setValues({...values,error:data.error,success:false});
              }
               else{
-                  setValues({...values,firstName:"",lastName:"",email:"",address:"",phone:"",password:"",success:true});
+                  setValues({...values,didRedirect:true});
               }
          })
          .catch((err)=>console.log("Error in signup "+err))
     };
 
-
+    const performRedirect=()=>{
+        if(didRedirect){
+                return  <Redirect to="/login" />
+           
+        }
+        // if(isAuthenticated()){
+        //     return <Redirect to="/" />
+        // }
+    }
 
     const successMessage=()=>{
        return(<div className="alert alert-success"
@@ -137,6 +146,7 @@ const SignUp =()=> {
                         SignUp
                     </Button>
                 </Form>
+                {performRedirect()}
                         </Col>
                     </Row>
                     
