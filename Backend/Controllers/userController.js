@@ -59,9 +59,6 @@ exports.cancelFlight = (req,res) =>{
 }
 const CalculateRewardPoints = (currentRewards, price)=>{
     return currentRewards+(price/100);
-
-const CalculateRewardPoints = (currentRewards, distance)=>{
-    return currentRewards+(distance/100);
 }
 
 exports.bookFlight = (req,res) => {
@@ -104,4 +101,4 @@ exports.getUserById = (req,res) => {
     //   }
 
 }
-}
+
