@@ -41,7 +41,7 @@ const userFlightSchema = new mongoose.Schema(
 
         // }
 
-}
+},{collection:'UserFlightSchema'}
 )
 
 module.exports=mongoose.model("UserFlightSchema",userFlightSchema);
