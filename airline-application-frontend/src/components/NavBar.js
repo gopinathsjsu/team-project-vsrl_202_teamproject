@@ -7,13 +7,13 @@ import { Fragment } from 'react';
 function MyNavbar (){
         const history= useHistory();
         return (
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
             <Container>
-            <Navbar.Brand href="http://localhost:3006/">Travel Website</Navbar.Brand>
+            <Navbar.Brand href="http://localhost:3000/">Airline Application</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
              
-              <Nav className="ms-auto">
+              {/* <Nav className="ms-auto">
                  { (!isAuthenticated() && (
                     <Fragment className="mr-auto">
                 <Nav.Link  href="http://localhost:3006/login">Login</Nav.Link>
@@ -30,6 +30,15 @@ function MyNavbar (){
                }}>
                   Logout
                 </Button> } 
+              </Nav> */}
+              <Nav className="ms-auto">
+              {isAuthenticated() && <Button  onClick={()=>{
+                   signout(()=>{
+                       history.push("/")
+                   });
+               }}>
+                  Logout
+                </Button>}
               </Nav>
             </Navbar.Collapse>
             </Container>
