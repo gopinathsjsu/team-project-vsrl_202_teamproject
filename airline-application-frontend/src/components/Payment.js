@@ -1,10 +1,15 @@
 import React, { Component } from "react";
-import {useState,useParams } from "react";
-import {Container,Row,Col } from 'react-bootstrap';
+import { useState, useParams } from "react";
+import { Container, Row, Col } from 'react-bootstrap';
 import "../App.css";
 import { Link } from "react-router-dom";
 import "../css/FlightBooking.css";
-import { Redirect } from 'react-router';
+import Card from 'react-bootstrap/Card';
+import Form from 'react-bootstrap/Form';
+import IconButton from '@material-ui/core/IconButton';
+import Collapse from '@material-ui/core/Collapse';
+
+
 import {
   Button,
   FormControl,
@@ -15,173 +20,212 @@ import {
   TextField,
 } from "@material-ui/core";
 import Alert from "@material-ui/lab/Alert";
-
+import {getUserData} from "./apicalls/FlightApiCalls";
 export default function Payment(props) {
-    console.log("props");
-    console.log(props);
-    //const { fromNotifications } = this.props.location.state;
-    var data = props.location.state.flightData;
-    console.log("fromnotify"+data);
-   // Axios.defaults.withCredentials = true;
-    const [registered, setRegisterd] = useState(false);
-     const pay = () => {
-    //   if (
-    //     userDetails.password.trim().length < 5 ||
-    //     userDetails.first_name.trim() === "" ||
-    //     userDetails.last_name.trim() === "" ||
-    //     userDetails.city.trim() === "" ||
-    //     userDetails.street.trim() === "" ||
-    //     userDetails.email_id.trim() === "" ||
-    //     userDetails.zip_code.length < 5
-    //   ) {
-    //     setMessage("Please fill all fields");
-    //   } else if (
-    //     userDetails.email_id.includes(" ") ||
-    //     userDetails.zip_code.includes(" ") ||
-    //     userDetails.password.includes(" ")
-    //   ) {
-    //     setMessage("Space character not allowed in zip_code, password, email_id");
-    //   } else if (
-    //     dependentCount > 0 && validateDependentInfo()
-    //   ){
-    //     setMessage("invalid dependents details");
-    //   } else {
-    //     Axios.post("http://localhost:3001/register", {
-    //       userDetails,dependentsInfo
-    //     })
-    //       .then((response) => {
-    //         setMessage(
-    //           'Your User ID is "' +
-    //             response.data.user_id +
-    //             '" Contact admin for approval'
-    //         );
-    //         setRegisterd(true);
-    //       })
-    //       .catch((error) => {
-    //         setMessage(error.response.data.err);
-    //         setRegisterd(false);
-    //       });
-    //   }
-    };
-  
-    // if (registered) {
-    //   return (
-    //     <div className="main">
-    //       <h1 style={{ textAlign: "center" }}> hello</h1>
-    //       {/* <Link to="/login" className="button-xlarge pure-button">
-    //         Go to Login Page
-    //       </Link> */}
-    //     </div>
-    //   );
-    // }
-    return (
-        <Container fluid="sm">
-        <h1>Book Flight</h1>
-      <div>
-      
-        <FormGroup>
-        <Row md={3}>
-           {/* <Col></Col>
-           <Col>  */}
-          <FormControl>
-            <TextField
-            //   helperText={invalid.first_name ? "1-25 characters" : ""}
-              id="customer-name"
-              label="Customer Name"
-              type="text"
-              required
-            //   error={invalid.first_name}
-              onChange={(e) => {
-                const validation =
-                  e.target.value.length > 25 || e.target.value === ""
-                    ? true
-                    : false;
-               // setInvalid({ ...invalid, first_name: validation });
-               // setUserDetails({ ...userDetails, first_name: e.target.value });
-              }}
-            />
-            
-          </FormControl>
-          {/* </Col>*/}
-          </Row> 
-          <FormControl>
-          <Row  className="mb-10" md={3}>
-            <TextField
-            //   helperText={invalid.first_name ? "1-25 characters" : ""}
-              id="card-number"
-              label="Card Number"
-              type="text"
-              required
-            //   error={invalid.first_name}
-              onChange={(e) => {
-                const validation =
-                  e.target.value.length > 25 || e.target.value === ""
-                    ? true
-                    : false;
-               // setInvalid({ ...invalid, first_name: validation });
-               // setUserDetails({ ...userDetails, first_name: e.target.value });
-              }}
-            />
-            </Row>
-          </FormControl>
-          <FormControl>
-          <Row  className="mb-10" md={3}>
-            <TextField
-            //   helperText={invalid.first_name ? "1-25 characters" : ""}
-              id="card-number"
-              label="Expiration Month/Year"
-              type="text"
-              className="row-padding"
-              required
-            //   error={invalid.first_name}
-              onChange={(e) => {
-                const validation =
-                  e.target.value.length > 25 || e.target.value === ""
-                    ? true
-                    : false;
-               // setInvalid({ ...invalid, first_name: validation });
-               // setUserDetails({ ...userDetails, first_name: e.target.value });
-              }}
-            />
-            </Row>
-          </FormControl>
-          <FormControl>
-          <Row  className="mb-10" md={3}>
-            <TextField
-            //   helperText={invalid.first_name ? "1-25 characters" : ""}
-              id="card-number"
-              label="CVV"
-              type="text"
-              required
-            //   error={invalid.first_name}
-              onChange={(e) => {
-                const validation =
-                  e.target.value.length > 25 || e.target.value === ""
-                    ? true
-                    : false;
-               // setInvalid({ ...invalid, first_name: validation });
-               // setUserDetails({ ...userDetails, first_name: e.target.value });
-              }}
-            />
-            </Row>
-          </FormControl>
-       
-          <FormControl>
-          <Row  className="mb-10" md={3}>
-          <div>
-            <div className="pure-u-1-6"></div>
-            <p></p>
-            <Button variant="contained" color="primary" className="pure-u-1-6" onClick={pay}>
-              Pay
-            </Button>
-           </div>
-           </Row>
-          </FormControl>
-          {/* {message && <Alert severity="error">{message}</Alert>} */}
-        </FormGroup>
-      </div>
-      </Container>
-    );
+  const [userData, setUserData] = useState("");
+  const [paymentSuccess, SetPaymentSuccess] = useState("");
+  const [open, setOpen] = React.useState(true);
+  var data = props.location.state.flightData; 
+  var price=props.location.state.flightData.flightData.price * props.location.state.flightData.clicks;
+  var userId="619611cef02cb6d7493e623e";
+  var rewardPoints=0;
+  const getUser=()=>{
+    // event.preventDefault();
+    getUserData({
+      "userID": userId     
+    })
+    .then(data=>{
+      console.log("data");
+      console.log(data);
+      setUserData(data);
+      rewardPoints=data.rewardPoints;
+     // console.log("userdata");
+      //console.log(userData);
+      //console.log(userData.data.rewardPoints);
+    })
   }
   
+  price=price+0.35*(price);
+  const [RewarPointsSelected, setRewardPointsSelectedStatus] = useState(false);
+  const [registered, setRegisterd] = useState(false);
+  const pay = () => {}
+    
+  return (
+    <Container fluid="sm">
+      <h1>Book Flight</h1>
+      <div>
+        <Row>
+          <Col>
+            <Card style={{ width: '25rem' }}>
+              <Card.Body>
+                <Card.Title>Pay with card</Card.Title>
+
+                <FormGroup>
+                  <Row md={3}>
+                    {/* <Col></Col>
+           <Col>  */}
+                    <FormControl>
+                      <TextField className="row-alignment"
+                        //   helperText={invalid.first_name ? "1-25 characters" : ""}
+                        id="customer-name"
+                        label="Customer Name"
+                        type="text"
+                        required
+                        //   error={invalid.first_name}
+                        onChange={(e) => {
+                          const validation =
+                            e.target.value.length > 25 || e.target.value === ""
+                              ? true
+                              : false;
+                          // setInvalid({ ...invalid, first_name: validation });
+                          // setUserDetails({ ...userDetails, first_name: e.target.value });
+                        }}
+                      />
+
+                    </FormControl>
+                    {/* </Col>*/}
+                  </Row>
+                  <FormControl>
+                   
+                      <TextField className="row-alignment"
+                        //   helperText={invalid.first_name ? "1-25 characters" : ""}
+                        id="card-number"
+                        label="Card Number"
+                        type="text"
+                        required
+                        //   error={invalid.first_name}
+                        onChange={(e) => {
+                          const validation =
+                            e.target.value.length > 25 || e.target.value === ""
+                              ? true
+                              : false;
+                          // setInvalid({ ...invalid, first_name: validation });
+                          // setUserDetails({ ...userDetails, first_name: e.target.value });
+                        }}
+                      />
+                    
+                  </FormControl>
+                  <FormControl>
+                    
+                      <TextField className="row-alignment"
+                        //   helperText={invalid.first_name ? "1-25 characters" : ""}
+                        id="card-number"
+                        label="Expiration Month/Year"
+                        type="text"                        
+                        required
+                        //   error={invalid.first_name}
+                        onChange={(e) => {
+                          const validation =
+                            e.target.value.length > 25 || e.target.value === ""
+                              ? true
+                              : false;
+                          // setInvalid({ ...invalid, first_name: validation });
+                          // setUserDetails({ ...userDetails, first_name: e.target.value });
+                        }}
+                      />
+                    
+                  </FormControl>
+                  <FormControl>
+                    
+                      <TextField className="row-alignment"
+                        //   helperText={invalid.first_name ? "1-25 characters" : ""}
+                        id="card-number"
+                        label="CVV"
+                        type="text"
+                        required
+                        //   error={invalid.first_name}
+                        onChange={(e) => {
+                          const validation =
+                            e.target.value.length > 25 || e.target.value === ""
+                              ? true
+                              : false;
+                          // setInvalid({ ...invalid, first_name: validation });
+                          // setUserDetails({ ...userDetails, first_name: e.target.value });
+                        }}
+                      />
+                    
+                  </FormControl>
+
+                  {/* <FormControl> */}
+                  
+                  {/* </FormControl> */}
+                  {/* {message && <Alert severity="error">{message}</Alert>} */}
+
+                </FormGroup>
+
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col>
+            <Card style={{width:"25rem"}}>
+              <Card.Header as="h5">Order Summary</Card.Header>
+              <Card.Body>
+                <Card.Title>Payment Details:</Card.Title>
+                <Card.Text>
+                  <Row md={2}>
+                    <Col>Passenger(s)
+                    </Col>
+                   
+                    <Col md={{ span: 2, offset: 3 }}>{props.location.state.flightData.clicks}</Col>
+                  </Row>
+                  <Row md={3}>
+                    <Col>Price
+                    </Col>
+                   <Col></Col>
+                    <Col md={{ span: 2, offset: 1 }}>{props.location.state.flightData.flightData.price}</Col>
+                  </Row>
+                </Card.Text>
+               
+               
+                {/* <Button variant="contained" color="primary" className="pure-u-1-6" onClick={pay}> */}
+              </Card.Body>
+              <Card.Footer className="text-muted">
+                <Row md={2}>
+                  <Col>
+                Total(Including Tax)
+                  </Col><Col md={{ span: 2, offset: 3 }} className="col-padding">${price}</Col>
+                </Row>
+                <Row>
+                  <Form> 
+                  <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                  <Form.Check 
+                    type="checkbox" 
+                    label="Apply Reward Points"
+                    onChange={(e) => {
+                      const isChecked =e.target.checked;
+                      getUser();
+                      //applyReward=isChecked;
+                      setRewardPointsSelectedStatus(isChecked);
+                     // mileagePoints                        
+                      // setInvalid({ ...invalid, first_name: validation });
+                      // setUserDetails({ ...userDetails, first_name: e.target.value });
+                    }}
+                    id="chkApplyReward" />
+                </Form.Group></Form></Row>
+                <Row md={2}><Col>Adjusted Total</Col><Col md={{ span: 2, offset: 3 }}>${RewarPointsSelected?(price-rewardPoints):price}</Col></Row>
+                </Card.Footer>
+             
+            </Card>
+            <Button variant="primary" color="primary" style={{backgroundColor:"#0d6efd"}} className="pure-u-1-6"
+            onClick={(e)=>{
+              SetPaymentSuccess(true);
+            }}
+            
+            >Pay</Button>
+            <div>
+             <b>{paymentSuccess ? <Collapse in={open}> <Alert action={<IconButton aria-label="close" color="inherit" size="small" onClick={() => {setOpen(false);}}></IconButton>}sx={{ mb: 2 }}>Payment successful!</Alert></Collapse>  : <div></div>}</b> 
+             {/* <Alert onClose={() => {setOpen(false);}} severity="info">payment successful</Alert> */}
+            </div>
+           
+          </Col>
+        </Row>
+      </div>
+     
+    </Container >
+     
+  );
+  
+  
+}
+
 
