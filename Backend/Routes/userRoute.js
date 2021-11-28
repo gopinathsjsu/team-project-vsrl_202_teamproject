@@ -9,9 +9,9 @@ const router = express.Router();
 
 // router.param("questionPaperId", getQuestionPaperById);
 
-const{bookFlight, getUserById,getCurrentFlights,showFlights,showFlight,cancelFlight}= require("../controllers/userController");
+const{bookFlight, getUserById,getCurrentFlights,showFlights,showFlight,cancelFlight}= require("../Controllers/userController");
 const{isAuthenticated} = require("../Controllers/authController")
-const{getFlightById}= require("../controllers/adminController");
+const{getFlightById}= require("../Controllers/adminController");
 
 router.param("userId",getUserById);
 router.param("flightId",getFlightById);
