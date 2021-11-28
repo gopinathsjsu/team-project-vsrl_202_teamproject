@@ -5,7 +5,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Form,Button,Container,Row,Col } from "react-bootstrap";
 import { signin,authenticate,isAuthenticated } from "../authHelper";
 import { Link,Redirect } from "react-router-dom";
-
+import NavBar from "./NavBar"
+import "../App.css"
  const Login=()=>{
             const [values,setValues]=useState({
                 email:"",
@@ -72,15 +73,15 @@ import { Link,Redirect } from "react-router-dom";
 
             const performRedirect=()=>{
                 if(didRedirect){
-                    if(user && user.role===1){
-                        return  <p>Redirect to admin</p>
+                    if(user && user.role===0){
+                        return  <Redirect to="/" />
                     }
-                    else
-                    return <p>Redirect to user</p>
+                    else if(user && user.role===1)
+                        return <Redirect to="/admin/dashboard" />
                 }
-                if(isAuthenticated()){
-                    return <Redirect to="/" />
-                }
+                // if(isAuthenticated()){
+                //     return <Redirect to="/" />
+                // }
             }
             
     
@@ -89,11 +90,13 @@ import { Link,Redirect } from "react-router-dom";
                 <Container className="login" fluid style={{paddingLeft:0,paddingRight:0,paddingBottom:0,marginRight:0,marginLeft:0, backgroundColor: "#b5d2fd"}}>
                     {/* {loadingMessage()} */}
                     {error && errorMessage()}
-                    <h1 className="shadow-sm  p-3 text-center rounded" style={{color:"#0D6EFD"}}>Login</h1>
+                    <NavBar/>
                     <Row className="mt-5">
                         <Col lg={5} md={6} sm={12} className="p-5 m-auto shadow-sm rounded-lg">
+                        <p className="login-text">Login</p>
                         <Form>
                      <Form.Group className="mb-3" controlId="formBasicEmail">
+                    
                     <Form.Label >Email address</Form.Label>
 
                     <Form.Control value={email} type="email" onChange={handleChange("email")} placeholder="Enter email" />

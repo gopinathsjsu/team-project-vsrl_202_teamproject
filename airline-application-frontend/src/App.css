@@ -7,6 +7,12 @@ html, body {
 .login{
   height:100%
 }
+
+.login-text{
+  color:dodgerblue;
+  font-size: 25px;
+  text-align: center;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

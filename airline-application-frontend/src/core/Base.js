@@ -1,7 +1,7 @@
 import React from "react";
 import Menu from "./Menu";
 import "../css/AdminDashboard.css"
-
+import NavBar from "../components/NavBar"
 const Base= ({
     title= "My Title",
     description= "My description",
@@ -10,10 +10,9 @@ const Base= ({
 })=> {
     return(
         <div>
+            <NavBar/>
            <div className="container-fluid adminCard">
                 <div className="jumbotron adminCard  text-white text-center">
-                    <h2 className="display-4">{title}</h2>
-                    <p className="lead">{description}</p>
                 </div>
                 <div className={className}>{children}</div>
            </div>

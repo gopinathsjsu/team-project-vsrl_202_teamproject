@@ -72,7 +72,7 @@ const AddFlight =()=>{
         </form>
     )
     return (
-        <Base title="Create a flight here" description="Add a new flight" className="container p-4">
+        <Base title=" " description=" " className="container p-4">
             <div className="row bg-white ">
                 <div className="col md-8 offset md-2">
                     {successMessage()}
