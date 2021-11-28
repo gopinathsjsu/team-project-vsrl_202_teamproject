@@ -52,7 +52,7 @@ export const showFlight = flightNumber => {
         "Content-Type": "application/json"
       },
 
-      body: JSON.stringify({"flightNumber":flightNumber})
+      body: JSON.stringify({"flightNumber":userID})
     })
       .then(response => {
       body: JSON.stringify(userID)
@@ -63,22 +63,7 @@ export const showFlight = flightNumber => {
       })
       .catch(err => console.log(err));
   };
-    export const getUserData = userID => {
-      console.log(userID);
-      return fetch(`http://localhost:8001/api/user`, {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(userID)
-      })
-        .then(response => {
-         // console.log(response.json());
-          return response.json();
-        })
-        .catch(err => console.log(err));
-    };
+  
   
   
 
