@@ -4,6 +4,7 @@ import Home from "./core/Home"
 import Login from './components/login.component';
 import SignUp from './components/signup.component';
 import AdminRoute from './authHelper/AdminRoute'
+import UserRoute from './authHelper/UserRoute'
 import AdminDashBoard from './components/AdminDashboard'
 import FlightBooking from './components/FlightBooking';
 import SignOut from './components/SignOut';
@@ -37,9 +38,9 @@ const Routes = ()=>{
 
 
             <Switch>
-                <Route path="/" exact component={Home} />
-                <Route path="/login" exact component={Login} />
+                <UserRoute path="/" exact component={Home} />
                 <Route path="/signup" exact component={SignUp} />
+                <Route path="/login" exact component={Login} />
                 <AdminRoute path="/admin/dashboard" exact component={AdminDashBoard}/>
                 <AdminRoute path="/admin/create/flights" exact component={AddFlight}/>
                 <Route path="/FlightBooking" exact component={FlightBooking} />

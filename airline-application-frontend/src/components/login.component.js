@@ -86,11 +86,10 @@ import { Link,Redirect } from "react-router-dom";
     
         return (
             
-                <Container fluid style={{paddingLeft:0,paddingRight:0,marginRight:0,marginLeft:0, backgroundColor: "#b5d2fd"}}>
-                    <MyNavbar />
+                <Container className="login" fluid style={{paddingLeft:0,paddingRight:0,paddingBottom:0,marginRight:0,marginLeft:0, backgroundColor: "#b5d2fd"}}>
                     {/* {loadingMessage()} */}
                     {error && errorMessage()}
-                    <h1 className="shadow-sm mt-5 p-3 text-center rounded" style={{color:"#0D6EFD"}}>Login</h1>
+                    <h1 className="shadow-sm  p-3 text-center rounded" style={{color:"#0D6EFD"}}>Login</h1>
                     <Row className="mt-5">
                         <Col lg={5} md={6} sm={12} className="p-5 m-auto shadow-sm rounded-lg">
                         <Form>
@@ -110,7 +109,7 @@ import { Link,Redirect } from "react-router-dom";
                         Login
                        {/* <p className="text-white text-center">{JSON.stringify(values)}</p>  */}
                     </Button>
-                    
+                    <Link to="/signup" className="nav-link text-primary">No account? Signup</Link>
                     </Form>
                     {performRedirect()}
                     {/* <p className="text-white text-center"> {JSON.stringify(values)}</p> */}
