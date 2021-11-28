@@ -27,7 +27,7 @@ exports.showFlight = (req,res) =>{
     
     const flightNumber = req.body.flightNumber;
 
-    return FlightSchema.find({flightNumber: flightNumber})
+    return UserFlightSchema.find({userId: req.body.userId,flightNumber: flightNumber})
     .exec()
     .then((flights) => {
         return res.json(flights);
