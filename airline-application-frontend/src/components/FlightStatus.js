@@ -2,15 +2,19 @@ import React,{useState} from "react";
 import { InputGroup, FormControl, Button, Form } from 'react-bootstrap';
 import {showFlight} from "./apicalls/FlightApiCalls"
 import FlightSelection from "./FlightSelection";
+import { isAuthenticated } from '../authHelper/index';
 
 export default function FlightStatus() {
   const [flightNumber,setFlightNumber] = useState();
   const [redirect, setRedirect] = useState(false);
   const [flightData, setFlightData] = useState();
+  const {user} = isAuthenticated();
+
   const SearchFlight = event=>{
     event.preventDefault();
     showFlight({
-      "flightNumber":flightNumber
+      "flightNumber":flightNumber,
+      "userId":user._id
     })
     .then(data=>{
         setFlightData(data);
