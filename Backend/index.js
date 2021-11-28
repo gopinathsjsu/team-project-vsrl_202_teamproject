@@ -6,9 +6,9 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
 //My routes
-const adminRoutes = require("./routes/adminRoute");
-const authRoutes = require("./routes/authRoute");
-const userRoutes = require("./routes/userRoute");
+const adminRoutes = require("./Routes/adminRoute");
+const authRoutes = require("./Routes/authRoute");
+const userRoutes = require("./Routes/userRoute");
 
 //DB Connection
 const env = process.env.NODE_ENV || 'development';
