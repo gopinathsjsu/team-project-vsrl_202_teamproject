@@ -20,25 +20,49 @@ import {
   TextField,
 } from "@material-ui/core";
 import Alert from "@material-ui/lab/Alert";
-import {getUserData} from "./apicalls/FlightApiCalls";
+import {getUserData,bookAndPayFlight} from "./apicalls/FlightApiCalls";
 export default function Payment(props) {
   const [userData, setUserData] = useState("");
   const [paymentSuccess, SetPaymentSuccess] = useState("");
   const [open, setOpen] = React.useState(true);
   var data = props.location.state.flightData; 
+  console.log(props);
   var price=props.location.state.flightData.flightData.price * props.location.state.flightData.clicks;
   var userId="619611cef02cb6d7493e623e";
   var rewardPoints=0;
   const getUser=()=>{
     // event.preventDefault();
     getUserData({
-      "userID": userId     
+      userId     
     })
     .then(data=>{
       console.log("data");
       console.log(data);
       setUserData(data);
       rewardPoints=data.rewardPoints;
+     // console.log("userdata");
+      //console.log(userData);
+      //console.log(userData.data.rewardPoints);
+    })
+  }
+
+  const bookAndPay=()=>{
+    // event.preventDefault();
+    bookAndPayFlight({
+      "userId": userId,
+      "flightId": data.flightData.flightId,
+      "class":"Economy",
+      "passengers":props.location.state.flightData.passengers,
+      "price":price,
+      "numberOfPassengers":props.location.state.flightData.clicks,
+      "rewardPoints":"35"
+    })
+    .then(data=>{
+      console.log("data");
+      console.log(data);
+      SetPaymentSuccess(true);
+     // setUserData(data);
+      //rewardPoints=data.rewardPoints;
      // console.log("userdata");
       //console.log(userData);
       //console.log(userData.data.rewardPoints);
@@ -208,7 +232,8 @@ export default function Payment(props) {
             </Card>
             <Button variant="primary" color="primary" style={{backgroundColor:"#0d6efd"}} className="pure-u-1-6"
             onClick={(e)=>{
-              SetPaymentSuccess(true);
+              bookAndPay();
+             
             }}
             
             >Pay</Button>

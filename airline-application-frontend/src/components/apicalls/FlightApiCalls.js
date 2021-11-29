@@ -44,18 +44,34 @@ export const showFlight = flightNumber => {
       .catch(err => console.log(err));
   };
   export const getUserData = userID => {
-    console.log(userID);
-    return fetch(`${process.env.REACT_APP_BACKEND}user`, {
+    console.log(userID.userId);
+    return fetch(`${process.env.REACT_APP_BACKEND}user/getuser/${userID.userId}`, {
       method: "POST",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json"
       },
 
-      body: JSON.stringify({"flightNumber":userID})
+      //body: JSON.stringify({"userId":userID})
     })
       .then(response => {
-      body: JSON.stringify(userID)
+       // console.log(response.json());
+        return response.json();
+      })
+      .catch(err => console.log(err));
+  };
+  
+
+  export const bookAndPayFlight = bookingData => {
+    console.log(bookingData.userID);
+    return fetch(`${process.env.REACT_APP_BACKEND}user/bookandpay/${bookingData.userID}`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+
+      body: JSON.stringify({"bookingDetails":bookingData})
     })
       .then(response => {
        // console.log(response.json());

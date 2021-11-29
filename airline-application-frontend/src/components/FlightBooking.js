@@ -3,7 +3,7 @@ import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from 'mdbreact';
 import moment from 'moment';
 import Card from 'react-bootstrap/Card';
 import "../css/FlightBooking.css";
-import { Row, Col, Accordion, Container, useAccordionButton } from 'react-bootstrap';
+import { Row, Col, Accordion, Container, useAccordionButton,Button } from 'react-bootstrap';
 import Select from 'react-select';
 import { Link } from "react-router-dom";
 import { Redirect } from 'react-router';
@@ -41,9 +41,18 @@ export default class FlightBooking extends Component {
             show: true,
             openPayment:0,
             flightData:{},
-            duration:""
+            duration:"",
+            passengers:[]
+            
         };
-        
+        this.passenger={
+            firstName:props.firstName,
+            lastName:props.lastName,
+            gender:props.gender,
+            email:props.email,
+            cell:props.cell,
+            seatNumber:props.seatNumber
+        }
         this.IncrementItem = this.IncrementItem.bind(this);
         this.onPaymentClick = this.onPaymentClick.bind(this);
        // this.duration="";
@@ -59,7 +68,9 @@ export default class FlightBooking extends Component {
             arrDate: data.arrivalDate,
             startTime: (data.departureDate + " " + data.departureTime),
             endTime: (data.arrivalDate + " " + data.arrivalTime),
-            price: data.price
+            price: data.price,
+            flightId:data._id,
+            flightNum:data.flightNumber
         };
 
         var startTime = moment(this.flightDetails.startTime, 'YYYY-MM-DD hh:mm A');
@@ -93,7 +104,58 @@ export default class FlightBooking extends Component {
 
      return <Redirect to="/Payment"></Redirect>;
       
-    }
+    };
+    getPassengerData=()=>{
+        //read passenger data
+       // console.log("in passenger console");
+    };
+    handleFirstNameChanged(event) {
+        //var passenger = this.state.passenger;
+        this.passenger.firstName  = event.target.value;
+    
+       // this.setState({ passenger: passenger });
+        //this.setState({ passenger: passenger });
+      }
+    
+      handleLastNameChanged(event) {
+       // var passenger = this.state.passenger;
+        this.passenger.lastName = event.target.value;
+    
+        //this.setState({ passenger: passenger });
+      };
+      handleEmailChanged(event) {
+        //var passenger = this.state.passenger;
+        this.passenger.email = event.target.value;
+    
+        //this.setState({ passenger: passenger });
+      };
+      handleCellChanged(event) {
+       // var passenger = this.state.passenger;
+       this.passenger.cell = event.target.value;
+    
+        //this.setState({ passenger: passenger });
+      };
+      handleGenderChanged(event) {
+       // var passenger = this.state.passenger;
+       this.passenger.gender = event.target.value;
+    
+        //this.setState({ passenger: passenger });
+      };
+      handleSeatNumberChanged(event) {
+        //var passenger = this.state.passenger;
+        this.passenger.seatNumber = event.target.value;
+        //this.setState({ passenger: passenger });
+        this.fillPassenger();
+       // this.setState({passengers: [...this.state.passengers, passenger] });
+        
+      };
+      fillPassenger()
+      {
+        var data=this.passenger;
+        //this.setState({passengers: data});
+        this.setState({passengers: [...this.state.passengers, data] });
+       //{...passengerData:data};
+      }
 
     render() {
         return (
@@ -189,27 +251,27 @@ export default class FlightBooking extends Component {
                                                     <h4>passenger {i + 1}</h4>
                                                     <div class="row row-padding">
                                                         <div class="col-md-3 form-group divPAdding">
-                                                            <input type="text" name="firstname" class="form-control  input-lg" id="fname" placeholder="First Name" required />
+                                                            <input type="text" onChange={this.handleFirstNameChanged.bind(this)} name="firstname" class="form-control  input-lg" id="fname" placeholder="First Name" required />
                                                         </div>
                                                         <div class="col-md-3 form-group divPAdding">
-                                                            <input type="text" name="lastname" class="form-control  input-lg" id="lname" placeholder="Last Name" required />
+                                                            <input type="text" name="lastname" onChange={this.handleLastNameChanged.bind(this)} class="form-control  input-lg" id="lname" placeholder="Last Name" required />
                                                         </div>
 
                                                     </div>
 
                                                     <div class="row row-padding">
                                                         <div class="col-md-6 form-group divPAdding">
-                                                            <input type="email" class="form-control  input-lg" name="email2" id="email1" placeholder="Your Email" required />
+                                                            <input type="email" onChange={this.handleEmailChanged.bind(this)} class="form-control  input-lg" name="email2" id="email1" placeholder="Your Email" required />
                                                         </div>
                                                     </div>
                                                     <div class="row row-padding">
                                                         <div class="col-md-6 form-group divPAdding">
-                                                            <input type="text" class="form-control" id="cell" name="cell" placeholder="Cell Phone" required />
+                                                            <input type="text" onChange={this.handleCellChanged.bind(this)} class="form-control" id="cell" name="cell" placeholder="Cell Phone" required />
                                                         </div>
                                                     </div>
                                                     <div class="row row-padding">
                                                         <div class="col-md-6 form-group divPAdding">
-                                                            <select class="form-control" >
+                                                            <select class="form-control"  onChange={this.handleGenderChanged.bind(this)} >
                                                                 <option>Select Gender</option>
                                                                 <option>Male</option>
                                                                 <option>Female</option>
@@ -218,7 +280,7 @@ export default class FlightBooking extends Component {
                                                     </div>
                                                     <div class="row row-padding">
                                                         <div class="col-md-6 form-group divPAdding">
-                                                            <select class="form-control" >
+                                                            <select class="form-control" onChange={this.handleSeatNumberChanged.bind(this)}>
                                                                 <option>Select Seat Number</option>
                                                                 <option>1A</option>
                                                                 <option>1B</option>
@@ -260,14 +322,15 @@ export default class FlightBooking extends Component {
                                             <input type="text" class="form-control" id="cell" name="cell" placeholder="Total Price" value={"$"+this.flightDetails.price*this.state.clicks}></input>
                                             </div>
                                             <div class="col-md-6 form-group divPAdding">
-                                            <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
-                                            <label class="form-check-label" htmlFor="exampleCheck1"> Use Reward Points?(You have x reward points)</label>
+                                            {/* <input type="checkbox" class="form-check-input" id="exampleCheck1"/> */}
+                                            {/* <label class="form-check-label" htmlFor="exampleCheck1"> Use Reward Points?(You have x reward points)</label> */}
                                             </div>      
                                             <div class="form-group">
                                                 {/* <button type="submit">Payment</button> */}
                                                 {/* <Link to="/Payment" params={{ testvalue: "hello" }} className="pure-menu-link">Payment</Link> */}
                                                 <div>
-                                                <Link className="rounded" style={{fontFamily: "var(--bs-body-font-family)",fontSize:" var(--bs-body-font-size)",fontWeight: "var(--bs-body-font-weight)",lineHeight: "var(--bs-body-line-height)", textDecoration: "none",paddingLeft: "1rem",paddingRight:"1rem",paddingTop:"0.2rem",paddingBottom:"0.56rem", backgroundColor: "#0d6efd", color: 'white'}} to={{pathname: '/Payment',state: { flightData: this.state }}}>Payment</Link>
+                                                    
+                                                <Link className="rounded" style={{fontFamily: "var(--bs-body-font-family)",fontSize:" var(--bs-body-font-size)",fontWeight: "var(--bs-body-font-weight)",lineHeight: "var(--bs-body-line-height)", textDecoration: "none",paddingLeft: "1rem",paddingRight:"1rem",paddingTop:"0.2rem",paddingBottom:"0.56rem", color: 'white'}} to={{pathname: '/Payment',state: { flightData: this.state }}}><Button onClick={(e)=>{this.state.passengerData=this.getPassengerData()}}>Payment</Button></Link>
                                                 </div>
                                             </div>
                                         </div>
