@@ -77,7 +77,7 @@ const BookFlight=()=> {
           placeholder="Passanger"
         /> */}
       </InputGroup>
-      <Button style={{backgroundColor: "#0d6efd", color: 'white'}} variant="outline-secondary" id="button-addon1" onClick={ShowFlights}>
+      <Button style={{backgroundColor: "#024", color: 'white'}} variant="outline-secondary" id="button-addon1" onClick={ShowFlights}>
         Show Flights
       </Button>
       {/* {performRedirect()}  */}

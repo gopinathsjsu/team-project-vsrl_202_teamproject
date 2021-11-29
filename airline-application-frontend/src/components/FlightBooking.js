@@ -7,6 +7,8 @@ import { Row, Col, Accordion, Container, useAccordionButton,Button } from 'react
 import Select from 'react-select';
 import { Link } from "react-router-dom";
 import { Redirect } from 'react-router';
+import Navbar from "./NavBar";
+import "../css/FlightBooking.css";
 
 const actions = [
     { label: "Female", value: 1 },
@@ -159,10 +161,11 @@ export default class FlightBooking extends Component {
 
     render() {
         return (
-
-            <Container fluid="sm">
-                <h2 style={{backgroundColor:'#b5d2fd',paddingBottom:"30px", paddingLeft:"50px", paddingTop: "30px",color:"#0d6efd"}}>Book Flight</h2>
-                <Accordion defaultActiveKey="0">
+            <Container className="flight-booking" fluid style={{paddingLeft:0,paddingRight:0,paddingBottom:0,marginRight:0,marginLeft:0}}>
+                <Navbar/>
+                <p className="login-text book-flight-text">Book Your Flight</p>
+                {/* <h2 style={{backgroundColor:'#b5d2fd',paddingBottom:"30px", paddingLeft:"50px", paddingTop: "30px",color:"#0d6efd"}}>Book Flight</h2> */}
+                <Accordion className="accordion-style" defaultActiveKey="0">
                     <Accordion.Item eventKey="0">
                         {/* <Accordion.Header>{flightDetails.deptLoc+" " + moment(flightDetails.depDate).format('DD MMM, YYYY')+" "+flightDetails.deptTime}</Accordion.Header> */}
                         <Accordion.Header>
@@ -176,7 +179,7 @@ export default class FlightBooking extends Component {
                                 </Row>
                             </Container>
                         </Accordion.Header>
-                        <Accordion.Body>
+                        <Accordion.Body className="accordion-body-style">
                             <Row xl={3}>
                                 <Col>
                                     <Row>
@@ -218,7 +221,7 @@ export default class FlightBooking extends Component {
                         </Accordion.Body>
                     </Accordion.Item>
                 </Accordion>
-                <Accordion defaultActiveKey="0">
+                <Accordion className="accordion-style2" defaultActiveKey="0">
                     <Accordion.Item eventKey="0">
                         {/* <Accordion.Header>{flightDetails.deptLoc+" " + moment(flightDetails.depDate).format('DD MMM, YYYY')+" "+flightDetails.deptTime}</Accordion.Header> */}
                         <Accordion.Header>
@@ -229,7 +232,7 @@ export default class FlightBooking extends Component {
 
                             </Container>
                         </Accordion.Header>
-                        <Accordion.Body>
+                        <Accordion.Body className="accordion-body-style">
                             <Row>
                                 <Col xs="auto"><span>Number Of Passengers:</span></Col>
                                 <Col xs="auto">   <button onClick={this.DecreaseItem}>-</button></Col>
@@ -330,7 +333,7 @@ export default class FlightBooking extends Component {
                                                 {/* <Link to="/Payment" params={{ testvalue: "hello" }} className="pure-menu-link">Payment</Link> */}
                                                 <div>
                                                     
-                                                <Link className="rounded" style={{fontFamily: "var(--bs-body-font-family)",fontSize:" var(--bs-body-font-size)",fontWeight: "var(--bs-body-font-weight)",lineHeight: "var(--bs-body-line-height)", textDecoration: "none",paddingLeft: "1rem",paddingRight:"1rem",paddingTop:"0.2rem",paddingBottom:"0.56rem", color: 'white'}} to={{pathname: '/Payment',state: { flightData: this.state }}}><Button onClick={(e)=>{this.state.passengerData=this.getPassengerData()}}>Payment</Button></Link>
+                                                <Link className="rounded" style={{fontFamily: "var(--bs-body-font-family)",fontSize:" var(--bs-body-font-size)",fontWeight: "var(--bs-body-font-weight)",lineHeight: "var(--bs-body-line-height)", textDecoration: "none",paddingLeft: "1rem",paddingRight:"1rem",paddingTop:"0.2rem",paddingBottom:"0.56rem", color: 'white'}} to={{pathname: '/Payment',state: { flightData: this.state }}}><Button style={{backgroundColor:"#024"}} onClick={(e)=>{this.state.passengerData=this.getPassengerData()}}>Payment</Button></Link>
                                                 </div>
                                             </div>
                                         </div>

@@ -10,7 +10,7 @@ const AdminDashBoard = ()=>{
     const adminLeftSide = ()=>{
         return (
             <div className="adminCard">
-                <h4 className="card-header bg-dark text-white">Admin Navigation</h4>
+                <h4 style={{backgroundColor:"#024"}} className="card-header text-white">Admin Navigation</h4>
             <ul className="list-group">
                 <li className="list-group-item">
                     <Link to="/admin/create/flights" className="nav-link text-primary">Create Flights</Link>
@@ -48,8 +48,8 @@ const AdminDashBoard = ()=>{
     }
 
     return (
-        <Base title="Welcome to Admin area" description="Manage all of your Flights here" className="container adminCard p-4">
-            <div className="adminCard row">
+        <Base className="admin-card" title="Welcome to Admin area" description="Manage all of your Flights here" className="container adminCard p-4">
+            <div className="row">
                 <div className="col-3">{adminLeftSide()}</div>
                 <div className="col-9">{adminRightSide()}</div>
             </div>

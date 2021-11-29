@@ -11,7 +11,7 @@ const Base= ({
     return(
         <div>
             <NavBar/>
-           <div className="container-fluid adminCard">
+           <div className="container-fluid adminCard admin-card">
                 <div className="jumbotron adminCard  text-white text-center">
                 </div>
                 <div className={className}>{children}</div>

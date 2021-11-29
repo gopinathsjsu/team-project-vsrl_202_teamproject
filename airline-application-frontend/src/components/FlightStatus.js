@@ -38,7 +38,7 @@ export default function FlightStatus() {
             </InputGroup>
           </div>
           <div class="col-md-4">
-            <Button onClick={SearchFlight} style={{ marginLeft: "4px" }}>Search flight</Button>
+            <Button onClick={SearchFlight} style={{ marginLeft: "4px",backgroundColor:"#024" }}>Search flight</Button>
           </div>
         </div>
         <div class="row mt-5">

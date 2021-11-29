@@ -10,7 +10,7 @@ function FlightSelection(props) {
   const ActionComponent = ({ row, onClick, value }) => {
     const clickHandler = () => onClick(row);
 
-    return <Button onClick={clickHandler}>{value}</Button>;
+    return <Button style={{backgroundColor:"#024"}} onClick={clickHandler}>{value}</Button>;
   };
   const selectFlight = (row) => {   
     setflightSelectedStatus(true);  

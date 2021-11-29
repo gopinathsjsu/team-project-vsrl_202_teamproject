@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { useState, useParams } from "react";
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col ,Button} from 'react-bootstrap';
 import "../App.css";
 import { Link } from "react-router-dom";
 import "../css/FlightBooking.css";
@@ -8,10 +8,10 @@ import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import IconButton from '@material-ui/core/IconButton';
 import Collapse from '@material-ui/core/Collapse';
-
-
+import "../css/FlightBooking.css";
+import Navbar from  "./NavBar";
 import {
-  Button,
+  
   FormControl,
   FormGroup,
   FormHelperText,
@@ -75,9 +75,9 @@ export default function Payment(props) {
   const pay = () => {}
     
   return (
-    <Container fluid="sm">
-      <h1>Book Flight</h1>
-      <div>
+    <Container fluid className="flight-booking" style={{paddingLeft:0,paddingRight:0,paddingBottom:0,marginRight:0,marginLeft:0}}>    
+    <Navbar/>  
+      <Container fluid style={{paddingLeft:"150px",paddingTop:"50px"}}>
         <Row>
           <Col>
             <Card style={{ width: '25rem' }}>
@@ -230,7 +230,15 @@ export default function Payment(props) {
                 </Card.Footer>
              
             </Card>
-            <Button variant="primary" color="primary" style={{backgroundColor:"#0d6efd"}} className="pure-u-1-6"
+            {/* <Button style={{backgroundColor: "#024", color: 'white'}} variant="outline-secondary" id="button-addon1" onClick={ShowFlights}>
+        Show Flights
+      </Button> */}
+          
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+        <Button style={{color:"white", backgroundColor:"#024"}}  variant="outline-secondary" className="MuiButton-root"
             onClick={(e)=>{
               bookAndPay();
              
@@ -241,11 +249,10 @@ export default function Payment(props) {
              <b>{paymentSuccess ? <Collapse in={open}> <Alert action={<IconButton aria-label="close" color="inherit" size="small" onClick={() => {setOpen(false);}}></IconButton>}sx={{ mb: 2 }}>Payment successful!</Alert></Collapse>  : <div></div>}</b> 
              {/* <Alert onClose={() => {setOpen(false);}} severity="info">payment successful</Alert> */}
             </div>
-           
-          </Col>
-        </Row>
-      </div>
-     
+            </Col>
+           </Row>
+        </Container>
+        
     </Container >
      
   );

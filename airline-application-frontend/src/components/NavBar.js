@@ -3,13 +3,14 @@ import { NavItem,Navbar,Header,Nav,Container,Button } from 'react-bootstrap';
 import { signout,isAuthenticated } from '../authHelper';
 import { useHistory } from 'react-router';
 import { Fragment } from 'react';
+import "../css/Base.css";
 
 function MyNavbar (){
         const history= useHistory();
         return (
-            <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
+            <Navbar className="navbar-background-color" collapseOnSelect expand="lg" variant="dark">
             <Container>
-            <Navbar.Brand href="http://localhost:3000/">Airline Application</Navbar.Brand>
+            <Navbar.Brand className="navbar-font" href="http://localhost:3000/">Airline Application</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
              
@@ -32,7 +33,7 @@ function MyNavbar (){
                 </Button> } 
               </Nav> */}
               <Nav className="ms-auto">
-              {isAuthenticated() && <Button  onClick={()=>{
+              {isAuthenticated() && <Button style={{color:"white", borderColor:"#024", backgroundColor:"#024"}} onClick={()=>{
                    signout(()=>{
                        history.push("/")
                    });

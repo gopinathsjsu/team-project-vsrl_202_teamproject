@@ -21,7 +21,7 @@ const Header = ()=>{
                 color="var(--primary1)"
                 className="mb-3"
                 >
-                    <Tab eventKey="Book" title="Book">
+                    <Tab eventKey="Book" title="Book" className="active-selected">
                         <BookFlight/>
                     </Tab>
                   

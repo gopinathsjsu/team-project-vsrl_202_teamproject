@@ -107,12 +107,13 @@ import "../App.css"
                         <Form.Label>Password</Form.Label>
                         <Form.Control value={password} type="password" placeholder="Password" onChange={handleChange("password")}  />
                     </Form.Group>
-                    
-                    <Button variant="btn btn-success btn-block" style={{backgroundColor: "rgb(13, 110, 253)", color: "white"}} type="submit" onClick={onSubmit}>
+                    <div style={{paddingLeft:"188px"}}>
+                    <Button variant="btn btn-success btn-block" style={{backgroundColor: "#024", color: "white"}} type="submit" onClick={onSubmit}>
                         Login
                        {/* <p className="text-white text-center">{JSON.stringify(values)}</p>  */}
                     </Button>
-                    <Link to="/signup" className="nav-link text-primary">No account? Signup</Link>
+                    </div>
+                   <Link to="/signup" className="signuplink-text"> No account? Signup</Link>
                     </Form>
                     {performRedirect()}
                     {/* <p className="text-white text-center"> {JSON.stringify(values)}</p> */}

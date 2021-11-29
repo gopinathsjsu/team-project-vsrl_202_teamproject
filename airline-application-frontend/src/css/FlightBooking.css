@@ -31,6 +31,29 @@
     width: 4px;
     padding-left: 19px;
 }
+.MuiButton-root{
+color:"white!important"
+}
+.flight-booking{
+    height: 200%;
+    /* min-height: 100vh; */
+    display: block;
+    position: absolute;
+    
+}
+.flight-booking::after {
+    content: "";
+    background: url("../images/flights.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.5; 
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+}
 .flight-padding
 {
     padding-left:10px;
@@ -87,13 +110,19 @@
   }
   .row-alignment
   {
-      padding-left:50px;
+      padding-top: 20px;
+      padding-right:50px;
       width:20rem;
   }
   .col-padding
   {
       padding-left:50px;
   }
+.book-flight-text {
+    padding-left: 50px;
+    padding-top: 5px;
+    padding-bottom: 0px;
+}
 .passenger-count
 {
     margin-top:-2px;
@@ -101,6 +130,29 @@
 .row>* {
     padding-left:15px!important;
     padding-right: 0px, !important;
+}
+.accordion-style
+{
+    /* padding-top:50px; */
+    padding-left:50px;
+    padding-right:50px;
+}
+.accordion-header-style{
+    background-color:#A5b9c9;color:darkgray;
+}
+.accordion-button:not(.collapsed){
+    background-color:#A5b9c9;color:#024;
+}
+.accordion-body-style
+{
+    /* background-color:#ECEAEA; */
+ background-color: #Edeeee;
+}
+.accordion-style2
+{
+    /* padding-top:50px; */
+    padding-left:50px;
+    padding-right:50px;
 }
 .CQYfx {
     font: 400 14px/20px Roboto,Arial,sans-serif;

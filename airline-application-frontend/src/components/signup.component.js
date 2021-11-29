@@ -6,6 +6,8 @@ import { useState } from "react";
 import { signup } from "../authHelper";
 import { Link,Redirect } from "react-router-dom";
 import Select from "react-select";
+import "../App.css";
+import NavBar from "./NavBar";
 
 const SignUp =()=> {
 
@@ -77,11 +79,13 @@ const SignUp =()=> {
 
 
         return (
-            <Container fluid style={{backgroundColor: "#b5d2fd",marginRight:0,marginLeft:0,paddingLeft:0,paddingRight:0}}>
-                    <h1 className="shadow-sm p-3 text-center rounded" style={{color:"#0D6EFD"}}>SignUp</h1>
+            <div style={{overflowY:"auto"}}>
+            <Container  className="signup-height" fluid style={{ marginRight:0,marginLeft:0,paddingLeft:0,paddingRight:0}}>
+                    {/* <h1 className="shadow-sm p-3 login rounded" style={{color:"#024"}}>SignUp</h1> */}
+                    <NavBar/>
                     <Row className="mt-5">
                         <Col lg={5} md={6} sm={12} className="p-5 m-auto shadow-sm rounded-lg">
-                    
+                        <p className="login-text">Sign up</p>
                     <Form >
 
                     <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -141,18 +145,20 @@ const SignUp =()=> {
                         <Form.Control value={password} type="password" placeholder="Password" 
                         onChange={handleChange("password")} />
                     </Form.Group>
-                    
-                    <Button style={{backgroundColor: "rgb(13, 110, 253)", color: "white"}} variant="success btn-block" onClick={onSubmit} type="submit">
-                        SignUp
+                    <div style={{paddingLeft:"185px"}}>
+                    <Button style={{backgroundColor: "#024", color: "white"}} variant="success btn-block" onClick={onSubmit} type="submit">
+                        Sign Up
                     </Button>
+                    </div>
                 </Form>
                 {performRedirect()}
                         </Col>
                     </Row>
                     
                 </Container>
-
-
+                <div class='content'></div>
+                </div>
+               
         )
         }
     export default SignUp;

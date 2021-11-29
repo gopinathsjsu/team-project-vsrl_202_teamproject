@@ -4,10 +4,32 @@ html, body {
 .App {
   text-align: center;
 }
+.content{
+  top:100%
+}
+.signup-height{
+  height:150%;  
+  display: block;
+  position: absolute;
+}
+.signup-height::after {
+  content: "";
+  background: url("../src/images/flights.jpeg");
+  background-size: cover;
+  opacity: 0.5; 
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
 .login{
   height:100%;
   display: block;
-  position: fixed;
+  position: absolute;
+
+  
   /* background-image: url("../src/images/flights.jpeg");
     background-size: cover;
     background-position: bottom;
@@ -28,11 +50,16 @@ html, body {
   z-index: -1;   
 }
 
-
+.signuplink-text{
+  color:rgb(50, 50, 51);
+  text-align:center;
+  text-decoration:underline;
+  padding-left:148px;
+}
 .login-text{
-  color:dodgerblue;
+  color:#024;
   font-size: 25px;
-  text-align: center;
+  text-align: left;
 }
 .App-logo {
   height: 40vmin;

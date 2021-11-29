@@ -3,3 +3,15 @@
     /* background-color:#b5d2fd ; */
     height: 50vh;
 }
+.active-selected:active
+{
+    color:"#024"
+}
+.active-selected
+{
+    color:"#024"
+}
+.nav-link
+{
+    color:"#024!important"
+}
