@@ -8,7 +8,6 @@ import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import IconButton from '@material-ui/core/IconButton';
 import Collapse from '@material-ui/core/Collapse';
-import "../css/FlightBooking.css";
 import Navbar from  "./NavBar";
 import {
   
@@ -21,19 +20,24 @@ import {
 } from "@material-ui/core";
 import Alert from "@material-ui/lab/Alert";
 import {getUserData,bookAndPayFlight} from "./apicalls/FlightApiCalls";
+import {isAuthenticated} from "../authHelper/index";
 export default function Payment(props) {
   const [userData, setUserData] = useState("");
   const [paymentSuccess, SetPaymentSuccess] = useState("");
+  const [tickerNumber, SetTicketNumber] = useState("");
   const [open, setOpen] = React.useState(true);
+  const {user,token} = isAuthenticated();
+
   var data = props.location.state.flightData; 
   console.log(props);
   var price=props.location.state.flightData.flightData.price * props.location.state.flightData.clicks;
-  var userId="619611cef02cb6d7493e623e";
+  //var userId="619611cef02cb6d7493e623e";
   var rewardPoints=0;
   const getUser=()=>{
+    console.log(user);
     // event.preventDefault();
     getUserData({
-      userId     
+      userId :user._id,
     })
     .then(data=>{
       console.log("data");
@@ -45,21 +49,31 @@ export default function Payment(props) {
       //console.log(userData.data.rewardPoints);
     })
   }
-
+  var ticketId = function () {
+    var timestamp = (new Date().getTime() / 1000 | 0).toString(16);
+    return timestamp + 'xxxxxxxxxxxxxxxx'.replace(/[x]/g, function() {
+        return (Math.random() * 16 | 0).toString(16);
+    }).toLowerCase();
+};
   const bookAndPay=()=>{
     // event.preventDefault();
+    
     bookAndPayFlight({
-      "userId": userId,
+      "userId": user._id,
       "flightId": data.flightData.flightId,
       "class":"Economy",
       "passengers":props.location.state.flightData.passengers,
       "price":price,
       "numberOfPassengers":props.location.state.flightData.clicks,
-      "rewardPoints":"35"
+      "rewardPoints":rewardPoints,
+      "bookingStatus":"booked",
+      "ticketNumber":ticketId()
     })
     .then(data=>{
       console.log("data");
       console.log(data);
+      //ticketNumber: userFlight.ticketNumber,
+      SetTicketNumber(data.ticketNumber);
       SetPaymentSuccess(true);
      // setUserData(data);
       //rewardPoints=data.rewardPoints;
@@ -75,7 +89,7 @@ export default function Payment(props) {
   const pay = () => {}
     
   return (
-    <Container fluid className="flight-booking" style={{paddingLeft:0,paddingRight:0,paddingBottom:0,marginRight:0,marginLeft:0}}>    
+    <Container fluid className="pay-book" style={{paddingLeft:0,paddingRight:0,paddingBottom:0,marginRight:0,marginLeft:0}}>    
     <Navbar/>  
       <Container fluid style={{paddingLeft:"150px",paddingTop:"50px"}}>
         <Row>
@@ -246,7 +260,7 @@ export default function Payment(props) {
             
             >Pay</Button>
             <div>
-             <b>{paymentSuccess ? <Collapse in={open}> <Alert action={<IconButton aria-label="close" color="inherit" size="small" onClick={() => {setOpen(false);}}></IconButton>}sx={{ mb: 2 }}>Payment successful!</Alert></Collapse>  : <div></div>}</b> 
+             <b>{paymentSuccess ? <Collapse in={open}> <Alert action={<IconButton aria-label="close" color="inherit" size="small" onClick={() => {setOpen(false);}}></IconButton>}sx={{ mb: 2 }}>Payment successful! This is your reference number for the booking {tickerNumber}</Alert></Collapse>  : <div></div>}</b> 
              {/* <Alert onClose={() => {setOpen(false);}} severity="info">payment successful</Alert> */}
             </div>
             </Col>

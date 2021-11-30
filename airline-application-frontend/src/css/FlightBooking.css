@@ -54,6 +54,26 @@ color:"white!important"
     position: absolute;
     z-index: -1;   
 }
+.pay-book{
+    height: 100%;
+    /* min-height: 100vh; */
+    display: block;
+    position: absolute;
+    
+}
+.pay-book::after {
+    content: "";
+    background: url("../images/flights.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.5; 
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+}
 .flight-padding
 {
     padding-left:10px;

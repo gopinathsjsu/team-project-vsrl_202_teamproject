@@ -43,6 +43,21 @@ export const showFlight = flightNumber => {
       })
       .catch(err => console.log(err));
   };
+  export const cancelFlightBookingAPI = flightData => {
+    return fetch(`${process.env.REACT_APP_BACKEND}user/booking/cancelBooking`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },//userId
+      body: JSON.stringify({"ticketNumber":flightData.ticketNumber},{"userId":flightData.userId})
+    })
+      .then(response => {
+        return response.json();
+      })
+      .catch(err => console.log(err));
+  };
+ 
   export const getUserData = userID => {
     console.log(userID.userId);
     return fetch(`${process.env.REACT_APP_BACKEND}user/getuser/${userID.userId}`, {

@@ -33,6 +33,9 @@ const userFlightSchema = new mongoose.Schema(
             type: mongoose.Schema.Types.ObjectId,
            // required:true
         },
+        bookingStatus:{
+            type:String
+        }
 
         // seatNumber:{
         //     type:Array,

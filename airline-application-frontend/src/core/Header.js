@@ -5,7 +5,7 @@ import BookFlight from "../components/BookFlight";
 import MyTrips from "../components/MyTrips";
 import Checkin from "../components/Checkin";
 import FlightStatus from '../components/FlightStatus';
-
+import CancelBooking from '../components/CancelBooking';
 
 const Header = ()=>{
     const [key, setKey] = useState('Book');
@@ -28,6 +28,9 @@ const Header = ()=>{
                     <Tab eventKey="status" title="Flight status">
                         {/* <Sonnet /> */}
                         <FlightStatus/>
+                    </Tab>
+                    <Tab eventKey="CancelBooking" title="Cancel Booking" className="active-selected">
+                        <CancelBooking/>
                     </Tab>
 
                 </Tabs>

@@ -64,6 +64,19 @@ exports.editFlights=(req,res) =>{
 exports.deleteFlights=(req,res) =>{
 
 }
+exports.cancelFlight = (req, res) => {
+    const flightNumber = parseInt(req.body.flightNumber);
+    return FlightSchema.deleteOne({ flightNumber: flightNumber })
+        .exec()
+        .then((flight) => {
+            return res.json(flight);
+        })
+        .catch(error => {
+            return {
+                error: "Flight Cancellation Failed " + error
+            };
+        })
+}
 exports.getAllFlights=(req,res) =>{
 return FlightSchema.find({})
  .then((data)=>{

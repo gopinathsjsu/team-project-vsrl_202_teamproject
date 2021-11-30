@@ -15,6 +15,9 @@ const AdminDashBoard = ()=>{
                 <li className="list-group-item">
                     <Link to="/admin/create/flights" className="nav-link text-primary">Create Flights</Link>
                 </li>
+                <li className="list-group-item">
+                    <Link to="/admin/cancel/flights" className="nav-link text-primary">Cancel Flight</Link>
+                </li>
 
                  {/* <li className="list-group-item">
                     <Link to="/admin/manage" className="nav-link text-success">Manage Flights</Link>

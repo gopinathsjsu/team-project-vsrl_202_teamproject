@@ -9,6 +9,7 @@ import AdminDashBoard from './components/AdminDashboard'
 import FlightBooking from './components/FlightBooking';
 import SignOut from './components/SignOut';
 import AddFlight from './admin/AddFlight'
+import CancelFlight from './admin/CancelFlight';
 import Payment from './components/Payment';
 import BookFlight from './components/BookFlight';
 import Header from './core/Header';
@@ -46,6 +47,7 @@ const Routes = ()=>{
                 <Route path="/book" exact component={Header} />
                 <AdminRoute path="/admin/dashboard" exact component={AdminDashBoard}/>
                 <AdminRoute path="/admin/create/flights" exact component={AddFlight}/>
+                <AdminRoute path="/admin/cancel/flights" exact component={CancelFlight}/>
                 <Route path="/FlightBooking" exact component={FlightBooking} />
                 <Route path="/signout" exact component={SignOut}/>
                 <Route path="/Payment" exact component={Payment} />

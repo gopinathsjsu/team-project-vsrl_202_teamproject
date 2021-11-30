@@ -29,7 +29,7 @@ exports.showFlight = (req, res) => {
 
     const flightNumber = req.body.flightNumber;
 
-    return UserFlightSchema.find({userId: req.body.userId,flightNumber: flightNumber})
+    return FlightSchema.find({userId: req.body.userId,flightNumber: flightNumber})
     .exec()
     .then((flights) => {
         return res.json(flights);
@@ -41,27 +41,27 @@ exports.showFlight = (req, res) => {
     })
 }
 
-exports.cancelFlight = (req, res) => {
-
-    const flightNumber = parseInt(req.body.flightNumber);;
-
-    return FlightSchema.deleteOne({ flightNumber: flightNumber })
+exports.cancelBookedFlight = (req, res) => {   
+    const ticketNo = parseInt(req.body.ticketNumber);
+    return UserFlightSchema.updateOne({ ticketNumber: ticketNo },{$set:{bookingStatus:"cancelled"}})
         .exec()
-        .then((flight) => {
-            return res.json(flight);
+        .then((userFlight) => {
+            return res.json(userFlight);
         })
         .catch(error => {
             return {
-                error: "Flight Deletion Failed " + error
+                error: "Booking cancellation Failed " + error
             };
         })
 
 }
+
 const CalculateRewardPoints = (currentRewards, price) => {
     return currentRewards + (price / 100);
 }
 
 exports.bookFlight = (req, res) => {
+    //console.log(req.body);
     const userFlight = new UserFlightSchema(req.body.bookingDetails);
     rewardPoints = CalculateRewardPoints(req.body.bookingDetails.rewardPoints, req.body.bookingDetails.price);
     userFlight.rewardPoints = rewardPoints;

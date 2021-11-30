@@ -9,6 +9,7 @@ export default function FlightStatus() {
   const [redirect, setRedirect] = useState(false);
   const [flightData, setFlightData] = useState();
   const {user} = isAuthenticated();
+  const [showSelect, setShowSelect] = useState();
 
   const SearchFlight = event=>{
     event.preventDefault();
@@ -18,6 +19,7 @@ export default function FlightStatus() {
     })
     .then(data=>{
         setFlightData(data);
+        setShowSelect(false);
           setRedirect(true);
     })
   }
@@ -43,7 +45,7 @@ export default function FlightStatus() {
         </div>
         <div class="row mt-5">
             <div className="myFlights">
-            {redirect && <FlightSelection data={flightData} showCancel={true} flightNumber={flightNumber}/>}
+            {redirect && <FlightSelection data={flightData} showSelect={false} showCancel={false} flightNumber={flightNumber}/>}
             </div>
         </div>
       </div>

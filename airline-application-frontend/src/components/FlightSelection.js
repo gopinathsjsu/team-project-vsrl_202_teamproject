@@ -51,7 +51,8 @@ function FlightSelection(props) {
       cell: row => <ActionComponent row={row} onClick={selectFlight} value="Select">Select</ActionComponent>,
       ignoreRowClick: true,
       allowOverflow: true,
-      button: true
+      button: true,
+      omit:!props.showSelect
     }
   ];
   
@@ -84,6 +85,7 @@ function FlightSelection(props) {
       ignoreRowClick: true,
       allowOverflow: true,
       button: true
+      
     }
   ];
   

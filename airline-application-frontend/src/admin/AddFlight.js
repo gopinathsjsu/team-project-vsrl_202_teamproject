@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import Base from "../core/Base";
 import {isAuthenticated} from "../authHelper/index"
 import {Link} from 'react-router-dom'
-import {createFlight} from './adminapicall'
+import {createFlight} from './adminapicall';
 
 const AddFlight =()=>{
     const [flightNumber,setFlightNumber] = useState("")

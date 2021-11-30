@@ -13,3 +13,17 @@ export const createFlight = (values)=>{
     })
     .catch(err=>console.log(err))
 }
+export const cancelFlightAPI = flightData => {
+    return fetch(`${process.env.REACT_APP_BACKEND}admin/cancelFlight`, {
+      method: "DELETE",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },//userId
+      body: JSON.stringify({"flightNumber":flightData.flightNumber})
+    })
+      .then(response => {
+        return response.json();
+      })
+      .catch(err => console.log(err));
+  };
