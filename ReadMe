@@ -7,117 +7,46 @@ Surbhi Dogra
 Airline Application:
 
 User:
-
-
+- User registers into the application by providing basic information like first name, last name, email_id, gender, phone number.
+- User can login into their account by using their credentials.
+- User can book a flight by entering source,destination,arrival date, departure date and make payment
+- User can avail mileage reward points while making payment.
+- User can also cancel the booking.
 Admin:
-
+- Admin can login into his account.
+- Admin can create flights.
+- Admin can also delete the flights.
 
 Tools and Languages:
 
 FrontEnd using React
-Backend using Node and Express
+Backend using Node.js and Express.js
 Database using MongoDB
+AWS Ec2 instance and ELP was used for deployment
 Scrum Management using Google task sheets
-<article class="markdown-body entry-content container-lg" itemprop="text"><h2 dir="auto"><a id="user-content-team-members" class="anchor" aria-hidden="true" href="#team-members"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Team Members</h2>
-<ul dir="auto">
-<li>Vamsi Srinivas Chalamolu</li>
-<li>Kevin Hsu</li>
-<li>Shreshta Balmuri</li>
-<li>Tejas Desai</li>
-</ul>
-<h2 dir="auto"><a id="user-content-online-banking-features" class="anchor" aria-hidden="true" href="#online-banking-features"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Online Banking features:</h2>
-<h3 dir="auto"><a id="user-content-user" class="anchor" aria-hidden="true" href="#user"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>User:</h3>
-<ul dir="auto">
-<li>
-<p dir="auto">Registration for normal user online banking account.</p>
-</li>
-<li>
-<p dir="auto">Each normal user will have 2 accounts, Checking, Savings accounts.</p>
-</li>
-<li>
-<p dir="auto">Transfer (internal) between your own accounts - one time or recurring</p>
-</li>
-<li>
-<p dir="auto">Set up recurring or one-time Bill payment for external payees</p>
-</li>
-<li>
-<p dir="auto">View and search Transactions - for credits/debits/checks/fees - up to last 18 months</p>
-</li>
-</ul>
-<h3 dir="auto"><a id="user-content-admin" class="anchor" aria-hidden="true" href="#admin"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Admin:</h3>
-<ul dir="auto">
-<li>
-<p dir="auto">Adding new accounts - Checking, Savings</p>
-</li>
-<li>
-<p dir="auto">Closing existing accounts</p>
-</li>
-<li>
-<p dir="auto">Add transactions - such as manual refunds on fees</p>
-</li>
-</ul>
-<h2 dir="auto"><a id="user-content-tools-and-languages" class="anchor" aria-hidden="true" href="#tools-and-languages"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Tools and Languages</h2>
-<ul dir="auto">
-<li>
-<p dir="auto">FrontEnd using React</p>
-</li>
-<li>
-<p dir="auto">Backend using springboot</p>
-</li>
-<li>
-<p dir="auto">Database using Mysql</p>
-</li>
-<li>
-<p dir="auto">Scrum Management using Google task sheets</p>
-</li>
-</ul>
-<h2 dir="auto"><a id="user-content-architecture-diagram" class="anchor" aria-hidden="true" href="#architecture-diagram"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Architecture Diagram</h2>
-<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="/gopinathsjsu/team-project-team2/blob/develop/ProjectDocuments/Architecture.png"><img src="/gopinathsjsu/team-project-team2/raw/develop/ProjectDocuments/Architecture.png" alt="Architecture Diagram" style="max-width: 100%;"></a>
-<a target="_blank" rel="noopener noreferrer" href="/gopinathsjsu/team-project-team2/blob/develop/ProjectDocuments/TestScreenshots/Database_diagram.jpg"><img src="/gopinathsjsu/team-project-team2/raw/develop/ProjectDocuments/TestScreenshots/Database_diagram.jpg" alt="DataBase Diagram" style="max-width: 100%;"></a></p>
-<h2 dir="auto"><a id="user-content-xp-core-values-implemented" class="anchor" aria-hidden="true" href="#xp-core-values-implemented"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>XP Core Values Implemented:</h2>
-<ul dir="auto">
-<li><strong>Communication</strong></li>
-</ul>
-<ul dir="auto">
-<li>Communication played huge role in our team. We had scrum calls twice a week, where we discussed the
-progress of each team member, thereby making necessary decisions and further roadmap.</li>
-</ul>
-<ul dir="auto">
-<li><strong>Feedback</strong></li>
-</ul>
-<ul dir="auto">
-<li>Each one of the team members gave feedback to one another in the team, during the testing phase, which
-greatly helped us in identifying the bugs. Code has been committed to master after proper review and
-feedback from the team.</li>
-</ul>
-<ul dir="auto">
-<li><strong>Respect</strong></li>
-</ul>
-<ul dir="auto">
-<li>Throughout the project, each one of us had valued and considered others ideas and suggestions and respected each others availability and timeline.</li>
-</ul>
-<h2 dir="auto"><a id="user-content-individual-contribution" class="anchor" aria-hidden="true" href="#individual-contribution"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Individual Contribution</h2>
-<ul dir="auto">
-<li>
-<p dir="auto">Our team work division has two categories, Frontend and Backend application development</p>
-</li>
-<li>
-<p dir="auto">Frontend Application design, implementation - Kevin, Shreshta.</p>
-</li>
-<li>
-<p dir="auto">Backend Application design, implementation - Vamsi and Shreshta.</p>
-</li>
-<li>
-<p dir="auto">Deployment - Tejas</p>
-</li>
-</ul>
-<h2 dir="auto"><a id="user-content-ui-wireframe" class="anchor" aria-hidden="true" href="#ui-wireframe"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>UI Wireframe</h2>
-<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="/gopinathsjsu/team-project-team2/blob/develop/ProjectDocuments/Figma-UI-Wireframe/ui1.png"><img src="/gopinathsjsu/team-project-team2/raw/develop/ProjectDocuments/Figma-UI-Wireframe/ui1.png" alt="UI 1" style="max-width: 100%;"></a>
-<a target="_blank" rel="noopener noreferrer" href="/gopinathsjsu/team-project-team2/blob/develop/ProjectDocuments/Figma-UI-Wireframe/ui2.png"><img src="/gopinathsjsu/team-project-team2/raw/develop/ProjectDocuments/Figma-UI-Wireframe/ui2.png" alt="UI 2" style="max-width: 100%;"></a></p>
-<h2 dir="auto"><a id="user-content-screenshots" class="anchor" aria-hidden="true" href="#screenshots"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Screenshots</h2>
-<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="/gopinathsjsu/team-project-team2/blob/develop/ProjectDocuments/TestScreenshots/SignUp.jpg"><img src="/gopinathsjsu/team-project-team2/raw/develop/ProjectDocuments/TestScreenshots/SignUp.jpg" alt="Signup" style="max-width: 100%;"></a>
-<a target="_blank" rel="noopener noreferrer" href="/gopinathsjsu/team-project-team2/blob/develop/ProjectDocuments/TestScreenshots/Login_Admin.jpg"><img src="/gopinathsjsu/team-project-team2/raw/develop/ProjectDocuments/TestScreenshots/Login_Admin.jpg" alt="Login_admin" style="max-width: 100%;"></a>
-<a target="_blank" rel="noopener noreferrer" href="/gopinathsjsu/team-project-team2/blob/develop/ProjectDocuments/TestScreenshots/Login_Customer.jpg"><img src="/gopinathsjsu/team-project-team2/raw/develop/ProjectDocuments/TestScreenshots/Login_Customer.jpg" alt="Login_customer" style="max-width: 100%;"></a>
-<a target="_blank" rel="noopener noreferrer" href="/gopinathsjsu/team-project-team2/blob/develop/ProjectDocuments/TestScreenshots/Approve_New_Customer.jpg"><img src="/gopinathsjsu/team-project-team2/raw/develop/ProjectDocuments/TestScreenshots/Approve_New_Customer.jpg" alt="Approve_New_Customer" style="max-width: 100%;"></a>
-<a target="_blank" rel="noopener noreferrer" href="/gopinathsjsu/team-project-team2/blob/develop/ProjectDocuments/TestScreenshots/Account_Opening_Requests.jpg"><img src="/gopinathsjsu/team-project-team2/raw/develop/ProjectDocuments/TestScreenshots/Account_Opening_Requests.jpg" alt="Account_opening_Request" style="max-width: 100%;"></a></p>
-</article>
+
+XP Core Values Implemented:
+Communication:
+
+Communication is the key role in our team. We had scrum calls once a week, We used to discuss the progress work completed by each team member,
+listed down the pending tasks from previous week and then plan task for next week.
+
+Feedback:
+
+From the beginning of the project we used to take feedback on one's individual work from the other team members.
+Also feedback was given to others in the team. This helped in understanding the functionality of the application and improving the code quality.
+Code has been committed to master after proper review and feedback from the team.
+
+Respect:
+
+From the beginning of the project each team member had valued others opinion and also considered others ideas and suggestions and respected each others.
+
+Individual Contribution:
+
+Our team work was divided into four categories. Frontend,Backend,Database,Deployment.
+
+Frontend Application design, implementation- 
+Backend Application design, implementation -
+Database design and implementation-
+Cloud Deployment-
+
