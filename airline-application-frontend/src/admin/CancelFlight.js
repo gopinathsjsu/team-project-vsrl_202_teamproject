@@ -11,8 +11,7 @@ import { InputGroup, FormControl, Button, Form } from 'react-bootstrap';
 const CancelFlight =()=>{
     const [flightNumber,setFlightNumber] = useState("")
     const [cancelSuccess, setCancelSuccess] = useState(false);
-    const {user,token} = isAuthenticated();
-    const [ticketNumber,setTicketNumber] = useState();
+    const {user,token} = isAuthenticated();    
     const [open, setOpen] = React.useState(true);
     const CancelFlight = event=>{
         event.preventDefault();
@@ -36,14 +35,14 @@ const CancelFlight =()=>{
               <FormControl
                 aria-label="Example text with button addon"
                 aria-describedby="basic-addon1"
-                placeholder="Ticket Number"
-                value={ticketNumber}
+                placeholder="Flight Number"
+                value={flightNumber}
                 onChange={(e)=>setFlightNumber(e.target.value)}
               />
             </InputGroup>
           </div>
           <div class="col-md-4">
-            <Button onClick={CancelFlight} style={{ marginLeft: "4px",backgroundColor:"#024" }}>Cancel Booking</Button>
+            <Button onClick={CancelFlight} style={{ marginLeft: "4px",backgroundColor:"#024" }}>Cancel Flight</Button>
           </div>
         </div>
         <div class="row mt-5">
