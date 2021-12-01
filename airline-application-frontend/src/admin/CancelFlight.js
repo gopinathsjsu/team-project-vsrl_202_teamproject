@@ -27,7 +27,7 @@ const CancelFlight =()=>{
    
     return (
         <Base title=" " description=" " className="container p-4">
-             <p className="login-text">Create Flight</p>
+             <p className="login-text">Cancel Flight</p>
              <div class="container">
       <div class="row">
           <div class="col-md-8">

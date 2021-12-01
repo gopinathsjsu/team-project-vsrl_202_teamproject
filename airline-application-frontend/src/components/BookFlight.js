@@ -81,7 +81,7 @@ const BookFlight=()=> {
         Show Flights
       </Button>
       {/* {performRedirect()}  */}
-      {redirect && <FlightSelection data={flightData}/>}
+      {redirect && <FlightSelection showSelect={true} data={flightData}/>}
     </div>
   );
 }
