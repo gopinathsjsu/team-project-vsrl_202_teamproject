@@ -1,12 +1,12 @@
-## Team Members:
+# Team Members:
 
-# Vineeth Karimiani
+## Vineeth Karimiani
 
-# Lakshmi Priya
+## Lakshmi Priya
 
-# Nikitha Kallepalli
+## Nikitha Kallepalli
 
-# Surbhi Dogra
+## Surbhi Dogra
 
 Airline Application:
 
