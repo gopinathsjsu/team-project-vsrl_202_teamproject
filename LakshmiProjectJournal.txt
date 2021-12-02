@@ -46,6 +46,9 @@ Sprint 4 :- 10/25/2021 - 10/31/2021
 		 1. Learning React 
 	- What tasks are blocked waiting on another team member?
 		 1. None		
+- Select one of the XP Core Values and keep a journal of how the team kept these values throughout the project.
+	The team maintained  "COMMUNICATION" value throughout the week where we sit together one day and have 1 sprint discussion call every friday.
+	The team maintained "FEEDBACK" value in this week to review our database design and the model classes.
 
 Sprint 5 :- 11/01/2021 - 11/07/2021
 -Weekly Scrum Report
@@ -55,6 +58,9 @@ Sprint 5 :- 11/01/2021 - 11/07/2021
 		 1. Creating FlightBooking and payments pages using react and bootstrap and React Material UI 
 	- What tasks are blocked waiting on another team member?
 		 1. None
+- Select one of the XP Core Values and keep a journal of how the team kept these values throughout the project.
+	The team maintained  "COMMUNICATION" value throughout the week where we sit together one day and have 1 sprint discussion call every friday.
+	The team maintained "FEEDBACK" value in this week to review flight booking screen design.
 
 Sprint 6 :- 11/08/2021 - 11/14/2021
 -Weekly Scrum Report
@@ -64,6 +70,9 @@ Sprint 6 :- 11/08/2021 - 11/14/2021
 		 1. Connecting FlightBooking and Payment pages to back-end 	 
 	- What tasks are blocked waiting on another team member?
 		 1. None
+- Select one of the XP Core Values and keep a journal of how the team kept these values throughout the project.
+	The team maintained  "COMMUNICATION" value throughout the week where we sit together one day and have 1 sprint discussion call every friday.
+	The team maintained "FEEDBACK" value in this week on flightbooking and payment pages.
 		
 Sprint 7 :- 11/15/2021 - 11/21/2021
 -Weekly Scrum Report
@@ -74,6 +83,9 @@ Sprint 7 :- 11/15/2021 - 11/21/2021
 		 1. Work on CSS and React-Bootstrap to enhance the look of the webpages 	 
 	- What tasks are blocked waiting on another team member?
 		 1. None
+- Select one of the XP Core Values and keep a journal of how the team kept these values throughout the project.
+	The team maintained  "COMMUNICATION" value throughout the week where we sit together one day and have 1 sprint discussion call every friday.
+	The team maintained "FEEDBACK" value in this week to review the reward point calculations.
 		
 Sprint 8 :- 11/22/2021 - 11/28/2021
 -Weekly Scrum Report
@@ -85,6 +97,8 @@ Sprint 8 :- 11/22/2021 - 11/28/2021
 		 1. project architecture diagram and reward points update to database 	 
 	- What tasks are blocked waiting on another team member?
 		 1. None
+- Select one of the XP Core Values and keep a journal of how the team kept these values throughout the project.
+	The team maintained  "COMMUNICATION" value throughout the week where we sit together one day and have 1 sprint discussion call every friday.
 		
 Sprint 9 :- 11/29/2021 - 12/02/2021
 -Weekly Scrum Report
