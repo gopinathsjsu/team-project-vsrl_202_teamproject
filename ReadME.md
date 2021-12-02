@@ -75,7 +75,7 @@ Database design and implementation- Vineet, Nikitha, Surbhi, Lakshmi Priya
 Cloud Deployment- Vineet, Nikitha, Surbhi, Lakshmi Priya
 
 
-#Architecture Diagram
+# Architecture Diagram
 
 
 ![ArchitectureDiagram](https://user-images.githubusercontent.com/25512807/144366540-cf962864-d8c8-4363-b1df-7102c6d22b51.jpg)
