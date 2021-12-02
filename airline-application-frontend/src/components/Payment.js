@@ -41,9 +41,10 @@ export default function Payment(props) {
     })
     .then(data=>{
       console.log("data");
-      console.log(data);
-      setUserData(data);
-      rewardPoints=data.rewardPoints;
+      console.log(data.data.rewardPoints);
+      setUserData(data.data);
+      rewardPoints=data.data.rewardPoints;
+      console.log("reward points"+rewardPoints);
      // console.log("userdata");
       //console.log(userData);
       //console.log(userData.data.rewardPoints);
@@ -240,7 +241,7 @@ export default function Payment(props) {
                     }}
                     id="chkApplyReward" />
                 </Form.Group></Form></Row>
-                <Row md={2}><Col>Adjusted Total</Col><Col md={{ span: 2, offset: 3 }}>${RewarPointsSelected?(price-rewardPoints):price}</Col></Row>
+                <Row md={2}><Col>Adjusted Total</Col><Col md={{ span: 2, offset: 3 }}>${RewarPointsSelected?(price-userData.rewardPoints):price}</Col></Row>
                 </Card.Footer>
              
             </Card>
