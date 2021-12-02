@@ -15,7 +15,7 @@ User:
 Admin:
 - Admin can login into his account.
 - Admin can create flights.
-- Admin can also delete the flights.
+- Admin can also cancel the flights.
 
 Tools and Languages:
 
