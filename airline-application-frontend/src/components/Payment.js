@@ -27,6 +27,8 @@ export default function Payment(props) {
   const [tickerNumber, SetTicketNumber] = useState("");
   const [open, setOpen] = React.useState(true);
   const {user,token} = isAuthenticated();
+  const [RewarPointsSelected, setRewardPointsSelectedStatus] = useState(false);
+  const [registered, setRegisterd] = useState(false);
 
   var data = props.location.state.flightData; 
   console.log(props);
@@ -66,9 +68,11 @@ export default function Payment(props) {
       "passengers":props.location.state.flightData.passengers,
       "price":price,
       "numberOfPassengers":props.location.state.flightData.clicks,
-      "rewardPoints":rewardPoints,
+      "rewardPoints":userData.rewardPoints,
       "bookingStatus":"booked",
-      "ticketNumber":ticketId()
+      "ticketNumber":ticketId(),
+      "isRewardApplied":RewarPointsSelected
+      
     })
     .then(data=>{
       console.log("data");
@@ -85,8 +89,7 @@ export default function Payment(props) {
   }
   
   price=price+0.35*(price);
-  const [RewarPointsSelected, setRewardPointsSelectedStatus] = useState(false);
-  const [registered, setRegisterd] = useState(false);
+  
   const pay = () => {}
     
   return (

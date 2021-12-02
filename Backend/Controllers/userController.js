@@ -2,6 +2,7 @@ const UserSchema = require("../Models/userSchema")
 const UserFlightSchema = require("../Models/UserFlightSchema")
 const FlightSchema = require("../Models/FlightSchema")
 const mongoose = require("mongoose");
+const userSchema = require("../Models/userSchema");
 exports.showFlights = (req, res) => {
 
     const fromDestination = req.body.departureLocation;
@@ -56,14 +57,22 @@ exports.cancelBookedFlight = (req, res) => {
 
 }
 
-const CalculateRewardPoints = (currentRewards, price) => {
+const CalculateRewardPoints = (currentRewards, price,isRewardApplied) => {
+    if(isRewardApplied)
+    {
+        if((currentRewards-price)<0)
+        {
+            return (price/100);
+        }
+        return (currentRewards-price)+(price/100);
+    }
     return currentRewards + (price / 100);
 }
 
 exports.bookFlight = (req, res) => {
     //console.log(req.body);
     const userFlight = new UserFlightSchema(req.body.bookingDetails);
-    rewardPoints = CalculateRewardPoints(req.body.bookingDetails.rewardPoints, req.body.bookingDetails.price);
+    rewardPoints = CalculateRewardPoints(req.body.bookingDetails.rewardPoints, req.body.bookingDetails.price,req.body.bookingDetails.isRewardApplied);
     userFlight.rewardPoints = rewardPoints;
     userFlight.save((err, userFlight) => {
         if (err) {
@@ -71,11 +80,15 @@ exports.bookFlight = (req, res) => {
                 err: "NOT able to save user flight details in DB" + "Error is" + err
             });
         }
+        else{
+        userSchema.updateOne({_id:userFlight.userId},{$set:{rewardPoints:userFlight.rewardPoints}})            
+        .exec();        
         res.json({
             class: userFlight.class,
             ticketNumber: userFlight.ticketNumber,
             numberOfPassengers: userFlight.numberOfPassengers
         })
+    }
     });
 
 }
