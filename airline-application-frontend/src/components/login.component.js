@@ -89,8 +89,8 @@ import "../App.css"
             
                 <Container className="login" fluid style={{paddingLeft:0,paddingRight:0,paddingBottom:0,marginRight:0,marginLeft:0}}>
                     {/* {loadingMessage()} */}
-                    {error && errorMessage()}
                     <NavBar/>
+                    {error && errorMessage()}
                     <Row className="mt-5">
                         <Col lg={5} md={6} sm={12} className="p-5 m-auto shadow-sm rounded-lg">
                         <p className="login-text">Login</p>
