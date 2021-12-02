@@ -1,34 +1,34 @@
-﻿\## Team Members:
+# Team Members:
 
-\# Vineeth Karimiani
+# Vineeth Karimiani
 
-\# Lakshmi Priya
+# Lakshmi Priya
 
-\# Nikitha Kallepalli
+# Nikitha Kallepalli
 
-\# Surbhi Dogra
+# Surbhi Dogra
 
 Airline Application:
 
 User:
 
-\- User registers into the application by providing basic information like first name, last name, email\_id, gender, phone number.
+- User registers into the application by providing basic information like first name, last name, email\_id, gender, phone number.
 
-\- User can login into their account by using their credentials.
+- User can login into their account by using their credentials.
 
-\- User can book a flight by entering source,destination,arrival date, departure date and make payment
+- User can book a flight by entering source,destination,arrival date, departure date and make payment
 
-\- User can avail mileage reward points while making payment.
+- User can avail mileage reward points while making payment.
 
-\- User can also cancel the booking.
+- User can also cancel the booking.
 
 Admin:
 
-\- Admin can login into his account.
+- Admin can login into his account.
 
-\- Admin can create flights.
+- Admin can create flights.
 
-\- Admin can also cancel the flights.
+- Admin can also cancel the flights.
 
 Tools and Languages:
 
@@ -73,3 +73,9 @@ Backend Application design, implementation - Vineet, Nikitha, Surbhi, Lakshmi Pr
 Database design and implementation- Vineet, Nikitha, Surbhi, Lakshmi Priya
 
 Cloud Deployment- Vineet, Nikitha, Surbhi, Lakshmi Priya
+
+
+
+![ArchitectureDiagram](https://user-images.githubusercontent.com/25512807/144366540-cf962864-d8c8-4363-b1df-7102c6d22b51.jpg)
+
+
