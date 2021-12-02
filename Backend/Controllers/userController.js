@@ -62,11 +62,11 @@ const CalculateRewardPoints = (currentRewards, price,isRewardApplied) => {
     {
         if((currentRewards-price)<0)
         {
-            return (price/100);
+            return parseInt((price/100).toFixed(0))+5;
         }
-        return (currentRewards-price)+(price/100);
+        return parseInt(currentRewards-price)+parseInt((price/100).toFixed(0))+parseInt(5);
     }
-    return currentRewards + (price / 100);
+    return parseInt(currentRewards) + parseInt((price / 100).toFixed(0))+5;
 }
 
 exports.bookFlight = (req, res) => {
