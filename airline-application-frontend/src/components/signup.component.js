@@ -20,12 +20,13 @@ const SignUp =()=> {
         gender:"",
         email:"",
         password:"",
+        confirmpassword:"",
         error:"",
         success:false,
         didRedirect:false
     });
     
-    const {didRedirect,firstName,lastName,email,address,phoneNumber,gender,password,error,success}=values;
+    const {didRedirect,firstName,lastName,email,address,phoneNumber,gender,password,confirmpassword,error,success}=values;
     
     const handleChange=name=>event=>{
         setValues({...values,error:false,[name]:event.target.value})
@@ -33,6 +34,10 @@ const SignUp =()=> {
 
     const onSubmit = event =>{
         event.preventDefault();
+        if(password!=confirmpassword){
+            setValues({...values,error:"Passwords do not match",success:false});
+            return;
+        }
         setValues({...values,error:false});
          signup({firstName,lastName,email,phoneNumber,password})
          .then(data=>{
@@ -82,9 +87,10 @@ const SignUp =()=> {
             <div style={{overflowY:"auto"}}>
             <Container  className="signup-height" fluid style={{ marginRight:0,marginLeft:0,paddingLeft:0,paddingRight:0}}>
                     {/* <h1 className="shadow-sm p-3 login rounded" style={{color:"#024"}}>SignUp</h1> */}
-                    {error && errorMessage()}
                     
                     <NavBar/>
+                    {error && errorMessage()}
+                    {successMessage()}
                     <Row className="mt-5">
                         <Col lg={5} md={6} sm={12} className="p-5 m-auto shadow-sm rounded-lg">
                         <p className="login-text">Sign up</p>
@@ -144,8 +150,8 @@ const SignUp =()=> {
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Confirm Password</Form.Label>
-                        <Form.Control value={password} type="password" placeholder="Password" 
-                        onChange={handleChange("password")} />
+                        <Form.Control value={confirmpassword} type="password" placeholder="Password" 
+                        onChange={handleChange("confirmpassword")} />
                     </Form.Group>
                     <div style={{paddingLeft:"185px"}}>
                     <Button style={{backgroundColor: "#024", color: "white"}} variant="success btn-block" onClick={onSubmit} type="submit">
