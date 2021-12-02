@@ -22,4 +22,75 @@ Sprint 2  :- 10/10/2021 - 10/17/2021
 		1. None
  - Select one of the XP Core Values and keep a journal of how the team kept these values throughout the project.
 	The team maintained the "COMMUNICATION" value throughout the week by sitting together one day and having 1 sprint discussion call.
-	
+
+Sprint 3 :- 10/18/2021 - 10/24/2021
+-Weekly Scrum Report
+	- What tasks did I work on / complete?
+		 1. Created Routes for admin for creating,editing,cancel flights
+		 2. Created Routes for User flight booking and flight payments
+		 3. Created FlightSchema model design
+	- What am I planning to work on next?
+		 1. Creating controller functions for creating,editing,cancelling flights,cancel booking, make payments and book a flight
+	- What tasks are blocked waiting on another team member?
+		 1. None
+ - Select one of the XP Core Values and keep a journal of how the team kept these values throughout the project.
+	The team maintained  "COMMUNICATION" value throughout the week where we sit together one day and have 1 sprint discussion call every friday.
+	The team maintained "FEEDBACK" value in this week to review our database design and the model classes.
+
+Sprint 4 :- 10/25/2021 - 10/31/2021
+-Weekly Scrum Report
+	- What tasks did I work on / complete?
+		 1. Updated the FlightSchema as per the feedback received last week.
+		 2. Added additional routes for cancel booking and flight booking pages
+	- What am I planning to work on next?
+		 1. Learning React 
+	- What tasks are blocked waiting on another team member?
+		 1. None		
+
+Sprint 5 :- 11/01/2021 - 11/07/2021
+-Weekly Scrum Report
+	- What tasks did I work on / complete?
+		 1. Learnt React framework for designing our front-end.
+	- What am I planning to work on next?
+		 1. Creating FlightBooking and payments pages using react and bootstrap and React Material UI 
+	- What tasks are blocked waiting on another team member?
+		 1. None
+
+Sprint 6 :- 11/08/2021 - 11/14/2021
+-Weekly Scrum Report
+	- What tasks did I work on / complete?
+		 1. Created FlightBooking and Payment pages in React
+	- What am I planning to work on next?
+		 1. Connecting FlightBooking and Payment pages to back-end 	 
+	- What tasks are blocked waiting on another team member?
+		 1. None
+		
+Sprint 7 :- 11/15/2021 - 11/21/2021
+-Weekly Scrum Report
+	- What tasks did I work on / complete?
+		 1. Successfully completed complete front end to backend flow for FlightBooking and Payment pages
+		 2. Started working on project architecture diagram.
+	- What am I planning to work on next?
+		 1. Work on CSS and React-Bootstrap to enhance the look of the webpages 	 
+	- What tasks are blocked waiting on another team member?
+		 1. None
+		
+Sprint 8 :- 11/22/2021 - 11/28/2021
+-Weekly Scrum Report
+	- What tasks did I work on / complete?
+		 1. Created fancy UI for FlightBooking and payment pages
+		 2. Worked on Reward point calculation for payment page.
+		 3. Created the EC2 instances for deploying the code to AWS.
+	- What am I planning to work on next?
+		 1. project architecture diagram and reward points update to database 	 
+	- What tasks are blocked waiting on another team member?
+		 1. None
+		
+Sprint 9 :- 11/29/2021 - 12/02/2021
+-Weekly Scrum Report
+	- What tasks did I work on / complete?
+		 1. Created additional EC2 instance in a different availability zone.
+		 2. Created Elastic Load Balancer on top of the two Ec2 instances
+		 3. Deployed the latest code to the Ec2 instance
+		 4. Tested the entire application flow in EC2 instance.
+
