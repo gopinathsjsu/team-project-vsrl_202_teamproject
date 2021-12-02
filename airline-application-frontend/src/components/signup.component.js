@@ -71,9 +71,13 @@ const SignUp =()=> {
     }
 
     const errorMessage=()=>{
-        return (<div className="alert alert-danger"
-        style={{display:error ? "":"none"}}>
-            {error}
+        return (
+            <div className="row">
+            <div className="col-md-6 offset-sm-3 text-left">
+                <div className="alert alert-danger" >
+                    {error}
+                </div>
+            </div>
         </div>);
     }
 
