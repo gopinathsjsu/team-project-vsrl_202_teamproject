@@ -32,25 +32,25 @@ Admin:
 
 Tools and Languages:
 
-FrontEnd using React
+-> FrontEnd using React
 
-Backend using Node.js and Express.js
+-> Backend using Node.js and Express.js
 
-Database using MongoDB
+-> Database using MongoDB
 
-AWS Ec2 instance and ELP was used for deployment
+-> AWS Ec2 instance and ELP was used for deployment
 
-Scrum Management using Google task sheets
+-> Scrum Management using Google task sheets
 
-XP Core Values Implemented:
+# XP Core Values Implemented:
 
-Communication:
+## Communication:
 
 Communication is the key role in our team. We had scrum calls once a week, We used to discuss the progress work completed by each team member,
 
 listed down the pending tasks from previous week and then plan task for next week.
 
-Feedback:
+## Feedback:
 
 From the beginning of the project we used to take feedback on one's individual work from the other team members.
 
@@ -58,11 +58,11 @@ Also feedback was given to others in the team. This helped in understanding the 
 
 Code has been committed to master after proper review and feedback from the team.
 
-Respect:
+## Respect:
 
 From the beginning of the project each team member had valued others opinion and also considered others ideas and suggestions and respected each others.
 
-Individual Contribution:
+## Individual Contribution:
 
 Our team work was divided into four categories. Frontend, Backend, Database, Deployment.
 
@@ -73,6 +73,8 @@ Backend Application design, implementation - Vineet, Nikitha, Surbhi, Lakshmi Pr
 Database design and implementation- Vineet, Nikitha, Surbhi, Lakshmi Priya
 
 Cloud Deployment- Vineet, Nikitha, Surbhi, Lakshmi Priya
+
+## All members of the team worked on each category. We divided the pages amongst us and worked on Schema, APIs, UI and the deployment equally giving everyone the oppurtunity to learn and work on every part of the application.
 
 
 # Architecture Diagram

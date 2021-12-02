@@ -50,7 +50,7 @@ Sprint 3 :- 10/18/2021 - 10/24/2021
 	- What tasks did I work on / complete?
 		 -> Learnt React framework which will be used for our front-end.
 	- What am I planning to work on next?
-		 ->Creating Login and Logout pages using react and bootstrap 	 
+		 ->Creating show flights page and cancel flight and flight status using react and bootstrap 	 
 	- What tasks are blocked waiting on another team member?
 		1. None
 
@@ -58,17 +58,16 @@ Sprint 3 :- 10/18/2021 - 10/24/2021
 Sprint 5 :- 11/08/2021 - 11/14/2021
 -Weekly Scrum Report
 	- What tasks did I work on / complete?
-		 -> Created Front-end login and signup pages 
+		 -> Created show flight page and cancel flight and flight status  
 	- What am I planning to work on next?
-		 ->Connecting Login and Logout pages to back-end 	 
+		 ->Connecting the pages which I create to back-end 	 
 	- What tasks are blocked waiting on another team member?
 		1. None
 		
 Sprint 6 :- 11/15/2021 - 11/21/2021
 -Weekly Scrum Report
 	- What tasks did I work on / complete?
-		 -> Fixed Errors in login and signup pages and connected the front-end and backend for these 2 pages. 
-		 -> Worked on creating burndown charts for last 5 sprints.
+		 -> Fixed Errors in the pages which I have created and backend for these pages. 
 	- What am I planning to work on next?
 		 ->Work on CSS and React-Bootstrap to enhance the look of the webpages 	 
 	- What tasks are blocked waiting on another team member?
@@ -77,11 +76,11 @@ Sprint 6 :- 11/15/2021 - 11/21/2021
 Sprint 7 :- 11/22/2021 - 11/28/2021
 -Weekly Scrum Report
 	- What tasks did I work on / complete?
-		 -> Updated the CSS for signup and signin pages. 
-		 -> Updated the API calls for signin/signup pages to add more validations.
-		 -> Helped the team deploy the code to AWS using AWS EC2 and elastic beanstalk.
+		 -> Updated the CSS for all the pages. 
+		 -> Updated the API calls for show flight, cancel flight pages.
+		 -> Deployed our project to AWS using AWS EC2 and load balancer.
 	- What am I planning to work on next?
-		 -> Work on remaining burndown charts and project report. 	 
+		 -> Work on architecture diagram and updating readme.md file. 	 
 	- What tasks are blocked waiting on another team member?
 		1. None
 		
@@ -89,5 +88,6 @@ Sprint 8 :- 11/29/2021 - 12/02/2021
 -Weekly Scrum Report
 	- What tasks did I work on / complete?
 		 -> Worked on project report and burndown charts. 
-		 -> Fixing css issues in flight search page and signin page.
-		 -> Testing the web application and fixing issues for respective features.
+		 -> Updated Readme.md file 
+		 -> Updated architecture diagram.
+		

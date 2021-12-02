@@ -82,6 +82,8 @@ const SignUp =()=> {
             <div style={{overflowY:"auto"}}>
             <Container  className="signup-height" fluid style={{ marginRight:0,marginLeft:0,paddingLeft:0,paddingRight:0}}>
                     {/* <h1 className="shadow-sm p-3 login rounded" style={{color:"#024"}}>SignUp</h1> */}
+                    {error && errorMessage()}
+                    
                     <NavBar/>
                     <Row className="mt-5">
                         <Col lg={5} md={6} sm={12} className="p-5 m-auto shadow-sm rounded-lg">
@@ -150,6 +152,7 @@ const SignUp =()=> {
                         Sign Up
                     </Button>
                     </div>
+                    <Link to="/login" className="signuplink-text"> Already have an account? Signin</Link>
                 </Form>
                 {performRedirect()}
                         </Col>

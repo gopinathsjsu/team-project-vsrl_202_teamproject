@@ -75,3 +75,19 @@ Sprint 2  :- 10/10/2021 - 10/17/2021
 		1. None
 	- Select one of the XP Core Values and keep a journal of how the team kept these values throughout the project.
 	The team is maintaining  "COMMUNICATION" value throughout the week where we sit together one day and have 1 sprint discussion call every friday.
+	
+Sprint 7 :- 11/22/2021 - 11/28/2021
+-Weekly Scrum Report
+	- What tasks did I work on / complete?
+		 -> Updated the CSS for all the pages. 
+		 -> Updated the API calls for show flight, cancel flight pages.
+		 -> Deployed our project to AWS using AWS EC2 and load balancer.
+	- What am I planning to work on next?
+		 -> Work on architecture diagram and updating readme.md file. 	 
+	- What tasks are blocked waiting on another team member?
+		1. None
+		
+Sprint 8 :- 11/29/2021 - 12/02/2021
+-Weekly Scrum Report
+	- What tasks did I work on / complete?
+		 -> Worked on UI wireframe
