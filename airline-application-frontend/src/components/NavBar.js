@@ -10,10 +10,12 @@ function MyNavbar (){
         return (
             <Navbar className="navbar-background-color" collapseOnSelect expand="lg" variant="dark">
             <Container>
-            <Navbar.Brand className="navbar-font" href="http://localhost:3000/">Airline Application</Navbar.Brand>
+            <Navbar.Brand className="navbar-font" href="/" >Airline Application</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
              
+
+
               {/* <Nav className="ms-auto">
                  { (!isAuthenticated() && (
                     <Fragment className="mr-auto">
