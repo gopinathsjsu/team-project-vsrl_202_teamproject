@@ -49,7 +49,7 @@ Every Monday
 
 ## Communication:
 
-Communication is the key role in our team. We had scrum calls once a week, We used to discuss the progress work completed by each team member,
+Communication is the key role in our team. We had scrum calls once a week on every Monday, We used to discuss the progress work completed by each team member,
 
 listed down the pending tasks from previous week and then plan task for next week.
 
