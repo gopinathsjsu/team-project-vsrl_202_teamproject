@@ -1,13 +1,9 @@
 # Team 200 OK
 
 # Team Members:
-
 ## Vineeth Karimiani
-
 ## Lakshmi Priya
-
 ## Nikitha Kallepalli
-
 ## Surbhi Dogra
 
 Airline Application:
