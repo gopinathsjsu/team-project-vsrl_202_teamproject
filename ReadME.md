@@ -10,7 +10,7 @@ Airline Application:
 
 User:
 
-- User registers into the application by providing basic information like first name, last name, email\_id, gender, phone number.
+- User registers into the application by providing basic information like first name, last name, email\_id, phone number.
 
 - User can login into their account by using their credentials.
 
