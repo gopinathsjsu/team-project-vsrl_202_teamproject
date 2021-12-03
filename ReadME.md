@@ -42,6 +42,9 @@ Tools and Languages:
 
 -> Scrum Management using Google task sheets
 
+# Scrum meetings schedule:
+Every Monday
+
 # XP Core Values Implemented:
 
 ## Communication:
