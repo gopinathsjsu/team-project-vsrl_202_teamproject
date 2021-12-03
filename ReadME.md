@@ -82,4 +82,13 @@ Cloud Deployment- Vineet, Nikitha, Surbhi, Lakshmi Priya
 
 ![ArchitectureDiagram](https://user-images.githubusercontent.com/25512807/144366540-cf962864-d8c8-4363-b1df-7102c6d22b51.jpg)
 
+# UI Wireframe
+
+![UI Wireframe 202-1 2](https://user-images.githubusercontent.com/25512807/144529346-0b74ff95-3ba8-431f-a2f7-1b5137549ce4.png)
+
+# Deployment Diagram
+
+![WhatsApp Image 2021-12-02 at 2 42 29 PM](https://user-images.githubusercontent.com/25512807/144529418-6488ca56-c7e0-4997-b106-cfcf519ecdc0.jpeg)
+
+
 
