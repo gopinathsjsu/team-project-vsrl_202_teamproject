@@ -79,6 +79,9 @@ Cloud Deployment- Vineet, Nikitha, Surbhi, Lakshmi Priya
 
 ## All members of the team worked on each category. We divided the pages amongst us and worked on Schema, APIs, UI and the deployment equally giving everyone the oppurtunity to learn and work on every part of the application.
 
+# Class Diagram
+<img width="1078" alt="ClassDiagram" src="https://user-images.githubusercontent.com/25512807/144533563-3984800c-a9f5-4ba7-b0c5-4a60c9cdef13.png">
+
 
 # Architecture Diagram
 
