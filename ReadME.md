@@ -98,7 +98,7 @@ Cloud Deployment- Vineet, Nikitha, Surbhi, Lakshmi Priya
 
 # Burndown Chart
 
-<img width="1084" alt="Screenshot 2021-12-02 at 7 02 46 PM" src="https://user-images.githubusercontent.com/25512807/144537915-119c2d07-924d-45b7-91a1-406dfc4a9685.png">
+<img width="1084" alt="Screenshot 2021-12-02 at 7 10 31 PM" src="https://user-images.githubusercontent.com/25512807/144538606-4f5f11f4-5e42-4ab0-81bf-1ebdadd27f8d.png">
 
 
 # Sprint Sheet Link
